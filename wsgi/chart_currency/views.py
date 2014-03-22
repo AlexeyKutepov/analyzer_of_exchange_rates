@@ -28,9 +28,12 @@ def get_values(currency_class, values, days):
 def chart_handler(request):
     values = []
     currency_class = None
+    currency = None
     is_have_period = True
     if 'currency' in request.GET:
         currency = request.GET['currency']
+        if currency==None or currency=='':
+            currency = 'USD'
         for item in CURRENCY_DATA:
             try:
                 if currency[0:3] == item["char_code"]:
@@ -43,7 +46,7 @@ def chart_handler(request):
         values.append(r'Дата, '+currency+r'/RUB\n')
         get_values(currency_class, values, 365)
         return render_to_response('chart.html', {
-        'title':'Котировки', 'quotes':'Курсы валют', 'chart_options':'chart_options.html', 'title_content':currency+'/RUB', 'values':values
+        'title':'Котировки', 'quotes':'Курсы валют', 'chart_options':'chart_options.html', 'title_content':currency[0:3]+'/RUB', 'values':values
         })
 
     if 'select_currency' in request.GET:
