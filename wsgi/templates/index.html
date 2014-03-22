@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block quotes %}{{quotes}}{% endblock %}
+{% block period %}
+    {% include period_state %}
+{% endblock %}
+{% block content %}
+    <table id="currency_table" border="0">
+        {% for currency_line in currencys %}
+            <tr>
+                {% for currency in currency_line %}
+                <td>
+                    {% if currency.state %}
+                        <div class="currency_green" id="{{ currency.char_code }}">
+                            <center>
+                                <h2>{{ currency.char_code }}</h2>
+                                <p>{{ currency.name }}</p>
+                                <b><p>{{ currency.value }} / {{ currency.count }}</p></b>
+                                <b><p>{{ currency.change }}</p></b>
+                            </center>
+                        </div>
+                    {% else %}
+                        <div class="currency_red" id="{{ currency.char_code }}">
+                            <center>
+                                <h2>{{ currency.char_code }}</h2>
+                                <p>{{ currency.name }}</p>
+                                <b><p>{{ currency.value }} / {{ currency.count }}</p></b>
+                                <b><p>{{ currency.change }}</p></b>
+                            </center>
+                        </div>
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
