@@ -1,11 +1,17 @@
-__author__ = 'kutepoval'
-import datetime
-date = datetime.date.today()
-print(date)
-exception_date = date.replace(year=2012, month=2, day=29)
-if str(exception_date.month).__eq__('2') and str(exception_date.day).__eq__('29'):
-    exception_date = exception_date.replace(day=28)
-print(exception_date.month==2 and exception_date.day==29)
-print(str(exception_date.month))
-print(exception_date.day)
-print(exception_date)
+#!/usr/bin/env python
+
+import os
+import sys
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+virtenv = os.environ['APPDIR'] + '/virtenv/'
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
+virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+try:
+    execfile(virtualenv, dict(__file__=virtualenv))
+except:
+    pass
+
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
