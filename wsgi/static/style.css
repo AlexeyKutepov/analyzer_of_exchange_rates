@@ -23,8 +23,14 @@ background: #20B2AA;
 width: 100%;
 height: 40px;
 border-radius:10px;
-font-size: 25px;
+font-size: 18px;
 }
+
+#menu_list{list-style:none; width:500px; padding:0; margin: auto;}
+#menu_list li{float:left; font:bold 18px Arial;}
+#menu_list a{color:#FFFFFF; display:block; height:40px; line-height:40px; padding:0px 30px 0px 30px; background:#20B2AA; text-decoration:none;}
+#menu_list a:hover{color:#fff; background:#888;}
+
 
 #period {
 background: #FAFAD2;
@@ -57,7 +63,6 @@ border-spacing: 10px;
 
 .white{
 color: #FFFFFF;
-font-style: oblique;
 font-weight: bold;
 }
 
@@ -68,8 +73,8 @@ border-style: solid;
 border-color: #3CB371;
 border-radius:10px;
 line-height: 0.6em;
-width: 160px;
-height: 95px;
+width: 145px;
+height: 90px;
 }
 
 .currency_red {
@@ -78,8 +83,8 @@ border-style: solid;
 border-color: #A52A2A;
 border-radius:10px;
 line-height: 0.6em;
-width: 160px;
-height: 95px;
+width: 145px;
+height: 90px;
 }
 
 

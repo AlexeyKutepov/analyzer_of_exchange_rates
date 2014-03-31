@@ -31,12 +31,16 @@ def get_currency(period):
             except StopIteration:
                 continue
             try:
-                state = get_state(item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value)
+                state = get_state(
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value
+                )
                 char_code = item["char_code"]
                 name = item["name"]
                 value = item["class"].objects.get(date=datetime.date.today()).value
                 units = item["class"].objects.get(date=datetime.date.today()).units
-                change = get_change(item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value)
+                change = get_change(
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value
+                )
                 link = "build_chart/?currency="+str(item["char_code"]);
             except ObjectDoesNotExist:
                 j -= 1
@@ -60,39 +64,55 @@ def response(years):
 #период 1 день
 def period_1d(request):
     currency = get_currency(datetime.date.today()-datetime.timedelta(days=1))
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/1d.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "currency":currency}
+    )
 
 #период 1 неделя
 def period_1w(request):
     currency = get_currency(datetime.date.today()-datetime.timedelta(weeks=1))
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/1w.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "currency":currency}
+    )
 
 #период 1 месяц
 def period_1m(request):
     currency = get_currency(datetime.date.today()-datetime.timedelta(days=30))
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/1m.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "currency":currency}
+    )
 
 #период 3 месяца
 def period_3m(request):
     currency = get_currency(datetime.date.today()-datetime.timedelta(days=90))
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/3m.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "currency":currency}
+    )
 
 #период 6 месяцев
 def period_6m(request):
     currency = get_currency(datetime.date.today()-datetime.timedelta(days=180))
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/6m.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "currency":currency}
+    )
 
 #период 1 год
 def period_1y(request):
     currency = response(years=1)
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/1y.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "currency":currency}
+    )
 
 #период 5 лет
 def period_5y(request):
     currency = response(years=5)
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/5y.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "currency":currency}
+    )
 
 #период 10 лет
 def period_10y(request):
     currency = response(years=10)
-    return render_to_response('currency.html', {'title':'Котировки', 'quotes':'Курсы валют', 'period_state':'period/10y.html', "currency":currency})
+    return render_to_response(
+        'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "currency":currency}
+    )

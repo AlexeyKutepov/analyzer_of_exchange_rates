@@ -44,7 +44,7 @@ def chart_handler(request):
         values.append(r'Дата, '+currency[0:3]+r'/RUB\n')
         get_values(currency_class, values, 365)
         return render_to_response('chart.html', {
-        'title':'Котировки', 'quotes':'Курсы валют', 'chart_options':'chart_options.html', 'title_content':currency[0:3]+'/RUB', 'values':values
+        'title':'Котировки', 'chart_options':'chart_options.html', 'title_content':currency[0:3]+'/RUB', 'values':values
         })
 
     if 'select_currency' in request.GET:
@@ -70,6 +70,6 @@ def chart_handler(request):
     else:
         get_values(currency_class, values, 365)
     return render_to_response('chart.html', {
-        'title':'Котировки', 'quotes':'Курсы валют', 'chart_options':'chart_options.html', 'title_content':currency, 'values':values
+        'title':'Котировки', 'chart_options':'chart_options.html', 'title_content':currency, 'values':values
     })
 

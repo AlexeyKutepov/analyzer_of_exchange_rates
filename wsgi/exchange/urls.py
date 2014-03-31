@@ -4,6 +4,7 @@ from django.contrib import admin
 
 from currency_to_rub.views import period_1d, period_1w, period_1m, period_3m, period_6m, period_1y, period_5y, period_10y
 from chart_currency.views import chart_handler
+from chart_forecast.views import build_forecast
 
 admin.autodiscover()
 
@@ -27,4 +28,7 @@ urlpatterns = patterns('',
     #сылки на графики курсов валют
     url(r'^build_chart/$', chart_handler),
     url(r'^chart/$', chart_handler),
+
+    url(r'^forecast/$', build_forecast),
+
 )

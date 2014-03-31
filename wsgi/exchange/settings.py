@@ -39,6 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'currency_to_rub',
+    'chart_forecast',
+    'forecast',
+    'cbrf_parser',
 )
 
 MIDDLEWARE_CLASSES = (
