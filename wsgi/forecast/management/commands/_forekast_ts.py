@@ -16,7 +16,7 @@ forecast_error – ошибка прогнозирования на один ш�
 __author__ = 'Alexey Kutepov'
 
 class ForecastTS:
-    def __init__(self, level=[], alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
+    def __init__(self, level=[], alpha=1.0, phi=0.5, gamma=0.0, delta=0.5,
                  trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1):
         self.alpha = alpha
         self.phi = phi
