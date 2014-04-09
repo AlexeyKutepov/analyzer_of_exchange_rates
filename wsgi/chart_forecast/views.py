@@ -40,11 +40,15 @@ def build_forecast(request, currency='USD'):
     values = build_chart(
         datetime.datetime.today()-datetime.timedelta(days=366), datetime.datetime.today(), currency
     )
-
+    try:
+        tommorow = str(FORECAST_CLASSES[currency].objects.get(date=datetime.datetime.today()).forecast)
+    except:
+        tommorow = "<недоступно>"
     return render_to_response('chart.html', {
         'title':'Котировки',
         'chart_options':'forecast_options.html',
         'title_content':"Прогноз "+currency+"/RUB",
+        'forecast_content':"Прогноз на завтра: "+tommorow+" RUB",
         'values':values
     })
 

@@ -37,14 +37,15 @@ class Command(BaseCommand):
             return
         prev_forecast = current_value
         forecast_class = ForecastTS([current_value,])
-        for i in range(1, days):
+        for i in range(1, (days+2)):
             result = forecast_class.get_forecast(current_value, prev_forecast, 1, i)
             prev_forecast = result
+            self.stdout.write("Forecast: "+str(result)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i-1))))
             try:
                 current_value = CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-i)).value
             except:
                 break
-            self.stdout.write("Forecast: "+str(result))
+            self.stdout.write("Next value: "+str(current_value)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i))))
             try:
                 old_value = FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-(i-1)))
             except:
