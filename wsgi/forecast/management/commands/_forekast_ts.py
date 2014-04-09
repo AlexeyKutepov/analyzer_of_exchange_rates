@@ -16,7 +16,7 @@ forecast_error – ошибка прогнозирования на один ш�
 __author__ = 'Alexey Kutepov'
 
 class ForecastTS:
-    def __init__(self, level, alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
+    def __init__(self, level=[], alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
                  trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1):
         self.alpha = alpha
         self.phi = phi
@@ -30,24 +30,24 @@ class ForecastTS:
 
     # Вычисление ошибки прогнозирования
     def calculate_forecast_error(self, current_value, forecast):
-        self.forecast_error.append(abs(current_value-forecast))
+        self.forecast_error.append(float(current_value-forecast))
 
     # Вычисление сглаженного тренда
     def calculate_trend(self, index):
         self.trend.append(
-            self.trend[index-1]*self.phi + self.alpha*self.gamma*self.forecast_error[index]
+            float(self.trend[index-1]*self.phi + self.alpha*self.gamma*self.forecast_error[index])
         )
 
     # Вычисление сглаженного уровня последовательности
     def calculate_level(self, index):
         self.level.append(
-            self.level[index-1] + self.trend[index-1] + self.alpha*self.forecast_error[index]
+            float(self.level[index-1]) + self.trend[index-1] + self.alpha*float(self.forecast_error[index])
         )
 
     # Вычисление сглаженного сезонного индекса
     def calculate_season_index(self, index):
         self.season.append(
-            self.season[index-self.periods] + self.delta*(1-self.alpha)*self.forecast_error[index]
+            float(self.season[index-self.periods] + self.delta*(1-self.alpha)*self.forecast_error[index])
         )
 
     # Вычисление прогноза
