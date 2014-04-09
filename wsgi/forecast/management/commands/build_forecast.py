@@ -46,14 +46,14 @@ class Command(BaseCommand):
                 break
             self.stdout.write("Forecast: "+str(result))
             try:
-                old_value = FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-i))
+                old_value = FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-(i-1)))
             except:
                 old_value = None
             if old_value != None:
                 old_value.forecast=result
                 old_value.save()
             else:
-                item = FORECAST_CLASSES[currency](forecast=result, date=datetime.date.today()-datetime.timedelta(days=days-i    ))
+                item = FORECAST_CLASSES[currency](forecast=result, date=datetime.date.today()-datetime.timedelta(days=days-(i-1)))
                 item.save()
 
 
