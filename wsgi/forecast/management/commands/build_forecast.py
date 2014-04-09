@@ -35,11 +35,11 @@ class Command(BaseCommand):
             current_value = CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days)).value
         except:
             return
-        prev_value = current_value
+        prev_forecast = current_value
         forecast_class = ForecastTS([current_value,])
         for i in range(1, days):
-            result = forecast_class.get_forecast(current_value, prev_value, 1, i)
-            prev_value = current_value
+            result = forecast_class.get_forecast(current_value, prev_forecast, 1, i)
+            prev_forecast = result
             try:
                 current_value = CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-i)).value
             except:
@@ -58,12 +58,12 @@ class Command(BaseCommand):
 
 
     def handle(self, *args, **options):
-        try:
+        # try:
             if args[0] == KNN_COMMAND:
                 self.knn_handler(args[1], int(args[2]), int(args[3]))
             elif args[0] == TS_COMMAND:
                 self.ts_handler(args[1], int(args[2]))
 
-        except:
-            raise CommandError('Command Error')
+        # except:
+        #     raise CommandError('Command Error')
 
