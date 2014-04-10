@@ -42,11 +42,6 @@ class Command(BaseCommand):
             prev_forecast = result
             self.stdout.write("Forecast: "+str(result)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i-1))))
             try:
-                current_value = CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-i)).value
-            except:
-                break
-            self.stdout.write("Next value: "+str(current_value)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i))))
-            try:
                 old_value = FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-(i-1)))
             except:
                 old_value = None
@@ -56,6 +51,11 @@ class Command(BaseCommand):
             else:
                 item = FORECAST_CLASSES[currency](forecast=result, date=datetime.date.today()-datetime.timedelta(days=days-(i-1)))
                 item.save()
+            try:
+                current_value = CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=days-i)).value
+            except:
+                break
+            self.stdout.write("Next value: "+str(current_value)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i))))
 
 
     def handle(self, *args, **options):
