@@ -15,7 +15,7 @@ def get_change(old_value, new_value):
     return new_value-old_value
 
 #формирование информации для отображения курсов валют на сайте
-def get_currency(period, end_date=datetime.date.today()):
+def get_currency(period, current_date=datetime.date.today()):
     currency = [] #список объектов currency
     iterator = iter(CURRENCY_DATA)
     columns = COLUMNS
@@ -32,14 +32,14 @@ def get_currency(period, end_date=datetime.date.today()):
                 continue
             try:
                 state = get_state(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=end_date).value
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=current_date).value
                 )
                 char_code = item["char_code"]
                 name = item["name"]
-                value = item["class"].objects.get(date=end_date).value
-                units = item["class"].objects.get(date=end_date).units
+                value = item["class"].objects.get(date=current_date).value
+                units = item["class"].objects.get(date=current_date).units
                 change = get_change(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=end_date).value
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=current_date).value
                 )
                 link = "build_chart/?currency="+str(item["char_code"]);
             except ObjectDoesNotExist:
@@ -52,9 +52,9 @@ def get_currency(period, end_date=datetime.date.today()):
         if currency_row != []:
             currency.append(currency_row)
     if currency == []:
-        return get_currency(period-datetime.timedelta(days=1), end_date-datetime.timedelta(days=1))
+        return get_currency(period-datetime.timedelta(days=1), current_date-datetime.timedelta(days=1))
     else:
-        return currency
+        return currency, current_date
 
 def response(years):
     date = datetime.date.today()
@@ -62,61 +62,61 @@ def response(years):
         date = date.replace(day=28)
     date = str(date.year-years)+"-"+str(date.month)+"-"+str(date.day)
     date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
-    currency = get_currency(date)
-    return currency
+    [currency, current_date] = get_currency(date)
+    return currency, current_date
 
 #период 1 день
 def period_1d(request):
-    currency = get_currency(datetime.date.today()-datetime.timedelta(days=1))
+    [currency, current_date] = get_currency(datetime.date.today()-datetime.timedelta(days=1))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "current_date":current_date, "currency":currency}
     )
 
 #период 1 неделя
 def period_1w(request):
-    currency = get_currency(datetime.date.today()-datetime.timedelta(weeks=1))
+    [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(weeks=1))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "current_date":current_date, "currency":currency}
     )
 
 #период 1 месяц
 def period_1m(request):
-    currency = get_currency(datetime.date.today()-datetime.timedelta(days=30))
+    [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=30))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "current_date":current_date, "currency":currency}
     )
 
 #период 3 месяца
 def period_3m(request):
-    currency = get_currency(datetime.date.today()-datetime.timedelta(days=90))
+    [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=90))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "current_date":current_date, "currency":currency}
     )
 
 #период 6 месяцев
 def period_6m(request):
-    currency = get_currency(datetime.date.today()-datetime.timedelta(days=180))
+    [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=180))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "current_date":current_date, "currency":currency}
     )
 
 #период 1 год
 def period_1y(request):
-    currency = response(years=1)
+    [currency, current_date]  = response(years=1)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "current_date":current_date, "currency":currency}
     )
 
 #период 5 лет
 def period_5y(request):
-    currency = response(years=5)
+    [currency, current_date]  = response(years=5)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date, "current_date":current_date, "currency":currency}
     )
 
 #период 10 лет
 def period_10y(request):
-    currency = response(years=10)
+    [currency, current_date]  = response(years=10)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "current_date":current_date, "currency":currency}
     )
