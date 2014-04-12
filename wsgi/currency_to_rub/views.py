@@ -49,7 +49,8 @@ def get_currency(period, end_date=datetime.date.today()):
                 currency_row.append(
                     Currency(state=state, char_code=char_code, name=name, value=value, units=units, change=change, link=link)
                 )
-        currency.append(currency_row)
+        if currency_row != []:
+            currency.append(currency_row)
     if currency == []:
         return get_currency(period-datetime.timedelta(days=1), end_date-datetime.timedelta(days=1))
     else:
