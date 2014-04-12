@@ -15,7 +15,7 @@ def get_change(old_value, new_value):
     return new_value-old_value
 
 #формирование информации для отображения курсов валют на сайте
-def get_currency(period):
+def get_currency(period, end_date=datetime.date.today()):
     currency = [] #список объектов currency
     iterator = iter(CURRENCY_DATA)
     columns = COLUMNS
@@ -32,14 +32,14 @@ def get_currency(period):
                 continue
             try:
                 state = get_state(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=end_date).value
                 )
                 char_code = item["char_code"]
                 name = item["name"]
-                value = item["class"].objects.get(date=datetime.date.today()).value
-                units = item["class"].objects.get(date=datetime.date.today()).units
+                value = item["class"].objects.get(date=end_date).value
+                units = item["class"].objects.get(date=end_date).units
                 change = get_change(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=datetime.date.today()).value
+                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=end_date).value
                 )
                 link = "build_chart/?currency="+str(item["char_code"]);
             except ObjectDoesNotExist:
@@ -50,7 +50,10 @@ def get_currency(period):
                     Currency(state=state, char_code=char_code, name=name, value=value, units=units, change=change, link=link)
                 )
         currency.append(currency_row)
-    return currency
+    if currency == []:
+        return get_currency(period-datetime.timedelta(days=1), end_date-datetime.timedelta(days=1))
+    else:
+        return currency
 
 def response(years):
     date = datetime.date.today()
