@@ -5,6 +5,7 @@ from currency_to_rub.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, 
 ROWS = 5 #кол-во строк для отображения валюты
 COLUMNS = 7 #кол-во столбцов для отображения валюты
 
+
 CURRENCY_CLASSES = {
     "USD":USD,
     "EUR":EUR,

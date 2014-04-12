@@ -16,6 +16,9 @@ def get_change(old_value, new_value):
 
 #формирование информации для отображения курсов валют на сайте
 def get_currency(period, current_date=datetime.date.today()):
+    if datetime.datetime.weekday(current_date)==6:
+        current_date = current_date - datetime.timedelta(days=1)
+        period = period - datetime.timedelta(days=1)
     currency = [] #список объектов currency
     iterator = iter(CURRENCY_DATA)
     columns = COLUMNS
@@ -69,54 +72,54 @@ def response(years):
 def period_1d(request):
     [currency, current_date] = get_currency(datetime.date.today()-datetime.timedelta(days=1))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 1 неделя
 def period_1w(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(weeks=1))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 1 месяц
 def period_1m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=30))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 3 месяца
 def period_3m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=90))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 6 месяцев
 def period_6m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=180))
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 1 год
 def period_1y(request):
     [currency, current_date]  = response(years=1)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
 
 #период 5 лет
 def period_5y(request):
     [currency, current_date]  = response(years=5)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date, "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date.strftime("%d.%m.%Y"), "current_date":current_date, "currency":currency}
     )
 
 #период 10 лет
 def period_10y(request):
     [currency, current_date]  = response(years=10)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
