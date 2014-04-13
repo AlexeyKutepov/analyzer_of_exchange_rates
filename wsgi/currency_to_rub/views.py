@@ -3,6 +3,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from currency_to_rub.constants import ROWS, COLUMNS, CURRENCY_DATA
 from currency_to_rub.currency import Currency
 import datetime
+import logging
+
+log = logging.getLogger(__name__)
 
 
 #Определяем выросла или упала валюта в цене
@@ -71,6 +74,7 @@ def response(years):
 #период 1 день
 def period_1d(request):
     [currency, current_date] = get_currency(datetime.date.today()-datetime.timedelta(days=1))
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 day, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/1d.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -78,6 +82,7 @@ def period_1d(request):
 #период 1 неделя
 def period_1w(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(weeks=1))
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 week, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/1w.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -85,6 +90,7 @@ def period_1w(request):
 #период 1 месяц
 def period_1m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=30))
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/1m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -92,6 +98,7 @@ def period_1m(request):
 #период 3 месяца
 def period_3m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=90))
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 3 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/3m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -99,6 +106,7 @@ def period_3m(request):
 #период 6 месяцев
 def period_6m(request):
     [currency, current_date]  = get_currency(datetime.date.today()-datetime.timedelta(days=180))
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 6 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/6m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -106,6 +114,7 @@ def period_6m(request):
 #период 1 год
 def period_1y(request):
     [currency, current_date]  = response(years=1)
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 year, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/1y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
@@ -113,6 +122,7 @@ def period_1y(request):
 #период 5 лет
 def period_5y(request):
     [currency, current_date]  = response(years=5)
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 5 years, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date.strftime("%d.%m.%Y"),  "currency":currency}
     )
@@ -120,6 +130,7 @@ def period_5y(request):
 #период 10 лет
 def period_10y(request):
     [currency, current_date]  = response(years=10)
+    log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 10 years, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency.html', {'title':'Котировки', 'period_state':'period/10y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency}
     )
