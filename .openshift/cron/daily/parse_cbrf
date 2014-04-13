@@ -1,0 +1,2 @@
+#!/bin/bash
+$OPENSHIFT_REPO_DIR/exchange/wsgi/python3 mamage.py parse_cbrf 1
