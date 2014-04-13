@@ -1,2 +1,5 @@
 #!/bin/bash
-$OPENSHIFT_REPO_DIR/exchange/wsgi/python3 mamage.py parse_cbrf 1
+echo "cronny started"
+date >> ${OPENSHIFT_DATA_DIR}/tictock.log
+source activate_virtenv
+python3 ${OPENSHIFT_REPO_DIR}/wsgi/manage.py parse_cbrf 1
