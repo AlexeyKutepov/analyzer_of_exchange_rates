@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "forecast_cny"
+date >>${OPENSHIFT_DATA_DIR}/cny.log
+source activate_virtenv
+python3 ${OPENSHIFT_REPO_DIR}/wsgi/manage.py build_forecast ts CNY 365
