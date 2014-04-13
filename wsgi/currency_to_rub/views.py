@@ -114,7 +114,7 @@ def period_1y(request):
 def period_5y(request):
     [currency, current_date]  = response(years=5)
     return render_to_response(
-        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date.strftime("%d.%m.%Y"), "current_date":current_date, "currency":currency}
+        'currency.html', {'title':'Котировки', 'period_state':'period/5y.html', "current_date":current_date.strftime("%d.%m.%Y"),  "currency":currency}
     )
 
 #период 10 лет
