@@ -15,11 +15,24 @@ class Command(BaseCommand):
             days = int(args[0])
         except:
             raise CommandError('Command Error: incorrectly stated the number of days')
-        command = input("Do you want to enter the username and password for the proxy server? (y/n): ")
-        if command=='y':
-            username = input("Enter the username: ")
-            password = input("Enter the password: ")
-            parser = CBRFParser(username, password)
+        try:
+            flag = args[1]
+        except:
+            flag = None
+        if 'cron'==flag:
+            hour = datetime.datetime.today().hour
+            print(hour)
+            if hour >= 9 and hour <= 10:
+                parser = CBRFParser()
+                parser.load_data(days)
+            else:
+               return
         else:
-            parser = CBRFParser()
-        parser.load_data(days)
+            command = input("Do you want to enter the username and password for the proxy server? (y/n): ")
+            if command=='y':
+                username = input("Enter the username: ")
+                password = input("Enter the password: ")
+                parser = CBRFParser(username, password)
+            else:
+                parser = CBRFParser()
+            parser.load_data(days)

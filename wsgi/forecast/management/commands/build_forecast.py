@@ -59,12 +59,24 @@ class Command(BaseCommand):
 
 
     def handle(self, *args, **options):
-        # try:
+        try:
             if args[0] == KNN_COMMAND:
                 self.knn_handler(args[1], int(args[2]), int(args[3]))
             elif args[0] == TS_COMMAND:
-                self.ts_handler(args[1], int(args[2]))
-
-        # except:
-        #     raise CommandError('Command Error')
+                try:
+                    flag = args[3]
+                except:
+                    flag = None
+                if 'cron'==flag:
+                    hour = datetime.datetime.today().hour
+                    if hour > 10 and hour <= 12:
+                        if args[1]=="ALL":
+                            for item in CURRENCY_DATA:
+                                self.ts_handler(item["char_code"], int(args[2]))
+                        else:
+                            self.ts_handler(args[1], int(args[2]))
+                else:
+                    self.ts_handler(args[1], int(args[2]))
+        except:
+            raise CommandError('Command Error')
 
