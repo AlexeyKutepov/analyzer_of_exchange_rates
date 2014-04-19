@@ -31,16 +31,6 @@ class ForecastTS:
     def __str__(self):
         return super().__str__()
 
-    def clear(self):
-        self.alpha = 0.5
-        self.phi = 0.5
-        self.gamma = 0.5
-        self.delta = 0.5
-        self.trend = [0.0,]
-        self.level = []
-        self.forecast_error = [0.0,]
-        self.season = [0.0,]
-        self.periods = 1
 
     # Вычисление ошибки прогнозирования
     def calculate_forecast_error(self, current_value, forecast):

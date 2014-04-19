@@ -9,7 +9,7 @@ from forecast.management.commands._constants import KNN_COMMAND, TS_COMMAND
 from forecast.management.commands._forecast_knn import *
 from chart_forecast.constants import FORECAST_CLASSES
 from currency_to_rub.constants import CURRENCY_CLASSES
-from forecast.management.commands._forekast_ts import ForecastTS
+from forecast.management.commands._forekast_ts import  *
 
 class Command(BaseCommand):
 
@@ -36,7 +36,8 @@ class Command(BaseCommand):
         except:
             return
         prev_forecast = current_value
-        forecast_class = ForecastTS([current_value,])
+        forecast_class = ForecastTS(level=[current_value,], alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
+                 trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1)
         for i in range(1, (days+2)):
             result = forecast_class.get_forecast(current_value, prev_forecast, 1, i)
             prev_forecast = result
@@ -56,7 +57,7 @@ class Command(BaseCommand):
             except:
                 break
             self.stdout.write("Next value: "+str(current_value)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i))))
-        forecast_class.clear()
+
 
 
     def handle(self, *args, **options):
