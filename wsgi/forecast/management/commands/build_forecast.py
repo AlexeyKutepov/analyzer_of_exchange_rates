@@ -56,6 +56,7 @@ class Command(BaseCommand):
             except:
                 break
             self.stdout.write("Next value: "+str(current_value)+" "+str(datetime.date.today()-datetime.timedelta(days=days-(i))))
+        forecast_class = None
 
 
     def handle(self, *args, **options):
