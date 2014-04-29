@@ -21,8 +21,7 @@ class Command(BaseCommand):
             flag = None
         if 'cron'==flag:
             hour = datetime.datetime.today().hour
-            print(hour)
-            if hour >= 9 and hour <= 10:
+            if hour >= 9 and hour <= 15:
                 parser = CBRFParser()
                 parser.load_data(days)
             else:
