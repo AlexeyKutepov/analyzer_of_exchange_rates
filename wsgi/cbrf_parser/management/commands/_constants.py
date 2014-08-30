@@ -8,3 +8,4 @@ WEB_ADDRESS_CB_RF = "http://www.cbr.ru/currency_base/daily.aspx?C_month=%s&C_yea
 
 
 
+
