@@ -19,6 +19,7 @@ from cbrf_parser.management.commands._cbrf_parser import CbrfParser
 # Класс - обработчик команд
 class Command(BaseCommand):
 
+    #Параметр который запускает автоматическое обновление данных
     option_list = BaseCommand.option_list + (
         make_option('--el',
             action='store_true',
