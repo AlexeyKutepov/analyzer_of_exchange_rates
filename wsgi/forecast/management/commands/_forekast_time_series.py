@@ -1,4 +1,5 @@
 """
+Алгоритм прогнозирования временных рядов
 alpha – параметр сглаживания уровня последовательности, [0:1];
 gamma – параметр сглаживания тренда, [0:1];
 delta – параметр сглаживания сезонных индексов, [0:1];
@@ -15,9 +16,10 @@ forecast_error – ошибка прогнозирования на один ш�
 
 __author__ = 'Alexey Kutepov'
 
-class ForecastTS:
-    def __init__(self, level, alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
-                 trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1):
+
+class ForecastTimeSeries:
+    def __init__(self, alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
+                 trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1, level=[],):
         self.alpha = alpha
         self.phi = phi
         self.gamma = gamma
@@ -33,40 +35,70 @@ class ForecastTS:
 
 
     # Вычисление ошибки прогнозирования
-    def calculate_forecast_error(self, current_value, forecast):
+    # current_value - forecast
+    def __calculate_forecast_error(self, current_value, forecast):
         self.forecast_error.append(float(current_value)-float(forecast))
 
     # Вычисление сглаженного тренда
-    def calculate_trend(self, index):
+    # trend * phi + alpha * gamma * forecast_error
+    def __calculate_trend(self):
         self.trend.append(
-            float(self.trend[index-1]*self.phi + self.alpha*self.gamma*self.forecast_error[index])
+            float(
+                self.trend[len(self.trend)-1] *
+                self.phi +
+                self.alpha * self.gamma *
+                self.forecast_error[len(self.forecast_error)-1]
+            )
         )
 
     # Вычисление сглаженного уровня последовательности
-    def calculate_level(self, index):
+    # level + trend + alpha * forecast_error
+    def __calculate_level(self):
         self.level.append(
-            float(self.level[index-1]) + self.trend[index-1] + self.alpha*float(self.forecast_error[index])
-        )
+            float(
+                self.level[len(self.level)-1]) +
+                self.trend[len(self.trend)-1] +
+                self.alpha *
+                float(self.forecast_error[len(self.forecast_error)-1])
+            )
 
     # Вычисление сглаженного сезонного индекса
-    def calculate_season_index(self, index):
+    # season + delta * (1 - alpha) * forecast_error
+    def __calculate_season_index(self):
         self.season.append(
-            float(self.season[index-self.periods] + self.delta*(1-self.alpha)*self.forecast_error[index])
+            float(
+                self.season[len(self.season) - self.periods] +
+                self.delta*(1-self.alpha) *
+                self.forecast_error[len(self.forecast_error)-1])
         )
 
     # Вычисление прогноза
-    def calculate_forecast(self, steps, index):
+    # level + trend * sum_phi + season
+    def __calculate_forecast(self, steps=1):
         sum_phi = 0.0
         for i in range(1, steps):
             sum_phi+=self.phi**i
-        forecast = self.level[index] + self.trend[index]*sum_phi + self.season[index-self.periods+steps]
+        forecast = self.level[len(self.level)-1] + \
+                   self.trend[len(self.trend)-1] * \
+                   sum_phi + \
+                   self.season[len(self.season) - 1 - self.periods + steps]
         return forecast
 
-    def get_forecast(self, value, prev_forecast, steps, index):
-        self.calculate_forecast_error(value, prev_forecast)
-        self.calculate_trend(index)
-        self.calculate_level(index)
-        self.calculate_season_index(index)
-        return self.calculate_forecast(steps, index)
+    # Метод получения прогноза:
+    # currency_values_set - числовой ряд
+    # steps - количество шагов вперед, на которое делается прогноз (по умолчанию = 1);
+    def get_forecast(self, values_list, steps=1):
+        result_list = []
+        self.level=[values_list[0], ]
+        prev_forecast = values_list[0]
+        for item in values_list:
+            self.__calculate_forecast_error(item, prev_forecast)
+            self.__calculate_trend()
+            self.__calculate_level()
+            self.__calculate_season_index()
+            result_list.append(self.__calculate_forecast(steps))
+            prev_forecast = result_list[len(result_list) - 1]
+        return result_list
+
 
 
