@@ -6,7 +6,7 @@ from django.db import models
 class USD(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -18,7 +18,7 @@ class USD(models.Model):
 class EUR(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -30,7 +30,7 @@ class EUR(models.Model):
 class AUD(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -42,7 +42,7 @@ class AUD(models.Model):
 class AZN(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -54,7 +54,7 @@ class AZN(models.Model):
 class AMD(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -66,7 +66,7 @@ class AMD(models.Model):
 class BYR(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -78,7 +78,7 @@ class BYR(models.Model):
 class BGN(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -90,7 +90,7 @@ class BGN(models.Model):
 class BRL(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -102,7 +102,7 @@ class BRL(models.Model):
 class HUF(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -114,7 +114,7 @@ class HUF(models.Model):
 class KRW(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -126,7 +126,7 @@ class KRW(models.Model):
 class DKK(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -138,7 +138,7 @@ class DKK(models.Model):
 class INR(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -150,7 +150,7 @@ class INR(models.Model):
 class KZT(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -162,7 +162,7 @@ class KZT(models.Model):
 class CAD(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -174,7 +174,7 @@ class CAD(models.Model):
 class KGS(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -186,7 +186,7 @@ class KGS(models.Model):
 class CNY(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -198,7 +198,7 @@ class CNY(models.Model):
 class LVL(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -210,7 +210,7 @@ class LVL(models.Model):
 class LTL(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -222,7 +222,7 @@ class LTL(models.Model):
 class MDL(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -234,7 +234,7 @@ class MDL(models.Model):
 class RON(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -246,7 +246,7 @@ class RON(models.Model):
 class TMT(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -258,7 +258,7 @@ class TMT(models.Model):
 class NOK(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -270,7 +270,7 @@ class NOK(models.Model):
 class PLN(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -282,7 +282,7 @@ class PLN(models.Model):
 class XDR(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -294,7 +294,7 @@ class XDR(models.Model):
 class SGD(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -306,7 +306,7 @@ class SGD(models.Model):
 class TJS(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -318,7 +318,7 @@ class TJS(models.Model):
 class TRY(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -330,7 +330,7 @@ class TRY(models.Model):
 class UZS(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -342,7 +342,7 @@ class UZS(models.Model):
 class UAH(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -354,7 +354,7 @@ class UAH(models.Model):
 class GBP(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -366,7 +366,7 @@ class GBP(models.Model):
 class CZK(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -378,7 +378,7 @@ class CZK(models.Model):
 class SEK(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -390,7 +390,7 @@ class SEK(models.Model):
 class CHF(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -402,7 +402,7 @@ class CHF(models.Model):
 class ZAR(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
@@ -414,7 +414,7 @@ class ZAR(models.Model):
 class JPY(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
-    date = models.DateField()
+    date = models.DateField(primary_key=True)
 
     def __unicode__(self):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)

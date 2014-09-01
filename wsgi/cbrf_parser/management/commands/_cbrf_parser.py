@@ -38,13 +38,7 @@ class CbrfParser:
                         value = value.replace(",",".")
                         value = float(value)
                         print(key, units, value, date)
-                        record = CURRENCY_CLASSES[key](units=units, value=value, date=date)
-                        try:
-                            old_value = CURRENCY_CLASSES[key].objects.get(date=date).value
-                        except:
-                            old_value = None
-                        if old_value == None:
-                            record.save()
+                        CURRENCY_CLASSES[key](units=units, value=value, date=date).save()
                         count = 3
                         found = False
                         key = ""
