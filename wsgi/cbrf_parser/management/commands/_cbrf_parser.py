@@ -8,8 +8,8 @@ import datetime
 
 from bs4 import *
 
-from cbrf_parser.app.web_connector import web_connector
-from cbrf_parser.app.constants import WEB_ADDRESS_CB_RF
+from cbrf_parser.management.commands._web_connector import web_connector
+from cbrf_parser.management.commands._constants import WEB_ADDRESS_CB_RF
 from currency_to_rub.constants import CURRENCY_CLASSES
 
 
@@ -73,4 +73,3 @@ class CbrfParser:
                         handled = True
         else:
             self.__run_parser(days, date_from, formated_date_from)
-

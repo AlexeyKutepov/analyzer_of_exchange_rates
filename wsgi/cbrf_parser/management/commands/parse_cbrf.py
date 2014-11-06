@@ -6,7 +6,7 @@
     n - количество дней, за которое нужно получить информацию о курсах валют.
         Пример: parse_cbrf 100 - получить информацию за 100 дней
 Опции:
-    -el - Запускает автоматический сбор данных ежедневно, за период времени указанный в n или
+    --el - Запускает автоматический сбор данных ежедневно, за период времени указанный в n или
           установленный по умолчанию
 """
 __author__ = 'Alexey Kutepov'
@@ -15,7 +15,7 @@ from optparse import make_option
 
 from django.core.management.base import BaseCommand, CommandError
 
-from cbrf_parser.app.cbrf_parser import CbrfParser
+from cbrf_parser.management.commands._cbrf_parser import CbrfParser
 
 
 # Класс - обработчик команд
@@ -33,7 +33,6 @@ class Command(BaseCommand):
 
     #Метод для обработки введённых команд
     def handle(self, *args, **options):
-        print(options.keys())
         if len(args) == 0:
             days = 1
         else:
