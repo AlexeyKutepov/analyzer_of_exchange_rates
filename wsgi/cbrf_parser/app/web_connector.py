@@ -2,7 +2,7 @@
 Модуль отвечающий за установку соединения c интернет-ресурсом
 """
 
-__author__ = 'Alexey'
+__author__ = 'Alexey Kutepov'
 
 
 import urllib.request

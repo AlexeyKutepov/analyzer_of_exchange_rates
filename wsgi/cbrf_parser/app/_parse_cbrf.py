@@ -11,10 +11,12 @@
 """
 __author__ = 'Alexey Kutepov'
 
+from optparse import make_option
 
 from django.core.management.base import BaseCommand, CommandError
-from optparse import make_option
-from cbrf_parser.management.commands._cbrf_parser import CbrfParser
+
+from cbrf_parser.app.cbrf_parser import CbrfParser
+
 
 # Класс - обработчик команд
 class Command(BaseCommand):

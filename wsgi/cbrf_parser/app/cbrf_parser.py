@@ -4,11 +4,14 @@
 
 __author__ = 'Alexey Kutepov'
 
-from cbrf_parser.management.commands._web_connector import web_connector
-from cbrf_parser.management.commands._constants import WEB_ADDRESS_CB_RF
-from currency_to_rub.constants import CURRENCY_CLASSES
-from bs4 import *
 import datetime
+
+from bs4 import *
+
+from cbrf_parser.app.web_connector import web_connector
+from cbrf_parser.app.constants import WEB_ADDRESS_CB_RF
+from currency_to_rub.constants import CURRENCY_CLASSES
+
 
 # Парсер сайта ЦБРФ
 class CbrfParser:
