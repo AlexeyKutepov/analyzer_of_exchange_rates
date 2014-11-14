@@ -17,52 +17,6 @@ def get_state(old_value, new_value):
 def get_change(old_value, new_value):
     return new_value-old_value
 
-#формирование информации для отображения курсов валют на сайте
-@DeprecationWarning
-def get_currency(period, current_date=datetime.date.today()):
-    if datetime.datetime.weekday(current_date) == 6:
-        current_date = current_date - datetime.timedelta(days=1)
-        period = period - datetime.timedelta(days=1)
-    currency = [] #список объектов currency
-    iterator = iter(CURRENCY_DATA)
-    columns = COLUMNS
-    rows = ROWS
-    for i in range(rows):
-        currency_row = []
-        j = 1
-        while j <= columns:
-            error = False
-            j += 1
-            try:
-                item = iterator.__next__()
-            except StopIteration:
-                continue
-            try:
-                state = get_state(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=current_date).value
-                )
-                char_code = item["char_code"]
-                name = item["name"]
-                value = item["class"].objects.get(date=current_date).value
-                units = item["class"].objects.get(date=current_date).units
-                change = get_change(
-                    item["class"].objects.get(date=period).value, item["class"].objects.get(date=current_date).value
-                )
-                link = "build_chart/?currency="+str(item["char_code"]);
-            except ObjectDoesNotExist:
-                j -= 1
-                error = True
-            if not error:
-                currency_row.append(
-                    Currency(state=state, char_code=char_code, name=name, value=value, units=units, change=change, link=link)
-                )
-        if currency_row != []:
-            currency.append(currency_row)
-    if currency == []:
-        return get_currency(period-datetime.timedelta(days=1), current_date-datetime.timedelta(days=1))
-    else:
-        return currency, current_date
-
 #Формирует информацию по курсам валют
 def prepare_currency(period, current_date=datetime.date.today()):
     if datetime.datetime.weekday(current_date) == 6:
