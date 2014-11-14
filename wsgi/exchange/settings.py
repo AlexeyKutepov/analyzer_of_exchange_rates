@@ -28,6 +28,7 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 ALLOWED_HOSTS = []
 
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = (
     'chart_forecast',
     'forecast',
     'cbrf_parser',
+    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,6 +104,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static').replace('\\','/')
+
 
 
 LOGGING = {
