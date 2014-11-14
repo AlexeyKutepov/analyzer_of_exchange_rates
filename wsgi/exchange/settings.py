@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'currency_to_rub',
+    'currency',
     'chart_forecast',
     'forecast',
     'cbrf_parser',
@@ -124,7 +124,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'currency_to_rub': {
+        'currency': {
             'handlers': ['request'],
             'level': 'INFO',
             'propagate': True,

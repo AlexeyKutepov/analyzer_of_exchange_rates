@@ -13,7 +13,7 @@
 __author__ = 'Alexey Kutepov'
 
 from django.core.management.base import BaseCommand, CommandError
-from currency_to_rub.constants import CURRENCY_CLASSES
+from currency.constants import CURRENCY_CLASSES
 from chart_forecast.constants import FORECAST_CLASSES
 from forecast.management.commands._forekast_time_series import  *
 import datetime

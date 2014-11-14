@@ -1,6 +1,6 @@
 __author__ = 'kutepoval'
-from currency_to_rub.models import USD, EUR, AUD, AZN, AMD, BYR, BGN, BRL, HUF, KRW, DKK, INR, KZT, CAD, KGS, CNY, LVL, JPY
-from currency_to_rub.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, TRY, UZS, UAH, GBP, CZK, SEK, CHF, ZAR
+from currency.models import USD, EUR, AUD, AZN, AMD, BYR, BGN, BRL, HUF, KRW, DKK, INR, KZT, CAD, KGS, CNY, LVL, JPY
+from currency.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, TRY, UZS, UAH, GBP, CZK, SEK, CHF, ZAR
 
 ROWS = 5 #кол-во строк для отображения валюты
 COLUMNS = 7 #кол-во столбцов для отображения валюты

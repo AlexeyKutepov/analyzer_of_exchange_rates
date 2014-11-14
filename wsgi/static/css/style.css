@@ -39,10 +39,10 @@ height: 40px;
 }
 
 
-#content {
+.content {
 background: #FAFAD2;
 width: 100%;
-height: 650px;
+height: auto;
 }
 
 #graphdiv {

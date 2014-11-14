@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block scripts %}
+    {% load staticfiles %}
+    <script src="{% static "scripts/switch.js" %}"></script>
+{% endblock %}
+{% block quotes %}{{quotes}}{% endblock %}
+{% block period %}
+    {% include period_state %}
+{% endblock %}
+
+{% block content %}
+<h3>Центральный банк Российской Федерации установил с {{current_date}} следующие курсы иностранных валют к рублю Российской Федерации без обязательств Банка России покупать или продавать указанные валюты по данному курсу </h3>
+
+    <table id="currency_table" border="0" style="font-size:medium;">
+
+        {% for item in currency %}
+            <tr>
+                {% if item.state %}
+                    <td><a href="/{{item.link}}" style="color:#3CB371; text-decoration: none"><b>{{ item.char_code }}</b></a></td>
+                    <td>{{ item.name }}</td>
+                    <td><b>{{ item.value }}</b></td>
+                    <td>{{ item.units }}</td>
+                    <td style="color:#3CB371;">+{{ item.change }}</td>
+                {% else %}
+                    <td><a href="/{{item.link}}" style="color:#A52A2A; text-decoration: none"><b>{{ item.char_code }}</b></a></td>
+                    <td>{{ item.name }}</td>
+                    <td><b>{{ item.value }}</b></td>
+                    <td>{{ item.units }}</td>
+                    <td style="color:#A52A2A;">{{ item.change }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

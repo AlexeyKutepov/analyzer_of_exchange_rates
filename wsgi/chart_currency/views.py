@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
-from currency_to_rub.models import USD
-from currency_to_rub.constants import CURRENCY_DATA
+from currency.models import USD
+from currency.constants import CURRENCY_DATA
 import datetime
 
 def get_values_for_handler(currency_class, values, from_date, to_date):

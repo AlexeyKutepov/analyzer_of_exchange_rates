@@ -1,6 +1,6 @@
 from django.contrib import admin
-from currency_to_rub.models import USD, EUR, AUD, AZN, AMD, BYR, BGN, BRL, HUF, KRW, DKK, INR, KZT, CAD, KGS, CNY, LVL, JPY
-from currency_to_rub.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, TRY, UZS, UAH, GBP, CZK, SEK, CHF, ZAR
+from currency.models import USD, EUR, AUD, AZN, AMD, BYR, BGN, BRL, HUF, KRW, DKK, INR, KZT, CAD, KGS, CNY, LVL, JPY
+from currency.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, TRY, UZS, UAH, GBP, CZK, SEK, CHF, ZAR
 
 # Register your models here.
 admin.site.register(USD) #Доллар США

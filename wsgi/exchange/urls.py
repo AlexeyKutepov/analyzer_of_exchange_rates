@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 
-from currency_to_rub.views import period_1d, period_1w, period_1m, period_3m, period_6m, period_1y, period_5y, period_10y
+from currency.views import period_1d, period_1w, period_1m, period_3m, period_6m, period_1y, period_5y, period_10y
 from chart_currency.views import chart_handler
 from chart_forecast.views import build_forecast
 from cbrf_parser.views import cbrf_parser_settings

@@ -6,7 +6,7 @@ import datetime
 
 from django.shortcuts import render_to_response
 
-from currency_to_rub.constants import CURRENCY_CLASSES
+from currency.constants import CURRENCY_CLASSES
 from chart_forecast.constants import FORECAST_CLASSES
 
 
