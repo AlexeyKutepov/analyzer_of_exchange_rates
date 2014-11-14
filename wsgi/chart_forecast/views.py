@@ -41,7 +41,7 @@ def build_forecast(request, currency='USD'):
         datetime.datetime.today()-datetime.timedelta(days=366), datetime.datetime.today(), currency
     )
     try:
-        tommorow = str(FORECAST_CLASSES[currency].objects.get(date=datetime.datetime.today()).forecast)
+        tommorow = str(FORECAST_CLASSES[currency].objects.get(date=datetime.datetime.today()+datetime.timedelta(days=1)).forecast)
     except:
         tommorow = "<недоступно>"
     return render_to_response('chart.html', {

@@ -33,14 +33,16 @@ def parse_cbrf():
         )
 
         result_list = forecast_class.get_forecast(currency_values_list)
+        print("currency_values_list = ", currency_values_list)
         print("forecast list = ", result_list)
 
+        forecast_date = datetime.date.today() - datetime.timedelta(days=len(result_list)-1)
         for i in range(len(result_list)):
             FORECAST_CLASSES[
                 item["char_code"]
             ](
                 forecast=result_list[i],
-                date=datetime.date.today() - datetime.timedelta(days=days-(i-1))
+                date=forecast_date + datetime.timedelta(days=i+1)
             ).save()
 
 
