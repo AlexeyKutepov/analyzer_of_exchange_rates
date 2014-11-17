@@ -45,6 +45,12 @@ width: 100%;
 height: auto;
 }
 
+.graph {
+background: #FAFAD2;
+width: 85%;
+height: 85%;;
+}
+
 #graphdiv {
 background: #FAFAD2;
 width: 85%;

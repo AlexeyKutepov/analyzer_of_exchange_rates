@@ -32,4 +32,28 @@
             </tr>
         {% endfor %}
     </table>
+    {#  Построение графика изменения курса валюты и графика прогнозов на прошедший период времени  #}
+    <div id="currency_graph" class="graph"></div>
+    <script type="text/javascript">
+        g = new Dygraph(
+        document.getElementById("currency_graph"),
+
+            {% for item in currency_values %}
+                "{{ item }}"+
+            {% endfor %}
+            ""
+        );
+    </script>
+    {#  Построение прогноза на будущее  #}
+    <div id="forecast_graph" class="graph"></div>
+    <script type="text/javascript">
+        g = new Dygraph(
+        document.getElementById("forecast_graph"),
+
+            {% for item in forecast_values %}
+                "{{ item }}"+
+            {% endfor %}
+            ""
+        );
+    </script>
 {% endblock %}
