@@ -3,6 +3,7 @@
 {% block scripts %}
     {% load staticfiles %}
     <script src="{% static "scripts/switch.js" %}"></script>
+    <script src="{% static "scripts/dygraph-combined.js" %}"></script>
 {% endblock %}
 {% block quotes %}{{quotes}}{% endblock %}
 {% block period %}
@@ -12,7 +13,31 @@
 {% block content %}
 <h3>Центральный банк Российской Федерации установил с {{current_date}} следующие курсы иностранных валют к рублю Российской Федерации без обязательств Банка России покупать или продавать указанные валюты по данному курсу </h3>
 
-    <table id="currency_table" border="0" style="font-size:medium;">
+     {#  Построение графика изменения курса валюты и графика прогнозов на прошедший период времени  #}
+    <div id="currency_graph" class="graph"></div>
+    <script type="text/javascript">
+        g = new Dygraph(
+        document.getElementById("currency_graph"),
+
+            {% for item in currency_values %}
+                "{{ item }}"+
+            {% endfor %}
+            ""
+        );
+    </script>
+    {#  Построение прогноза на будущее  #}
+{#    <div id="forecast_graph" class="graph"></div>#}
+{#    <script type="text/javascript">#}
+{#        g = new Dygraph(#}
+{#        document.getElementById("forecast_graph"),#}
+{##}
+{#            {% for item in forecast_values %}#}
+{#                "{{ item }}"+#}
+{#            {% endfor %}#}
+{#            ""#}
+{#        );#}
+{#    </script>#}
+    <table id="currency_table" border="0" class="currency_table">
 
         {% for item in currency %}
             <tr>
@@ -32,28 +57,5 @@
             </tr>
         {% endfor %}
     </table>
-    {#  Построение графика изменения курса валюты и графика прогнозов на прошедший период времени  #}
-    <div id="currency_graph" class="graph"></div>
-    <script type="text/javascript">
-        g = new Dygraph(
-        document.getElementById("currency_graph"),
 
-            {% for item in currency_values %}
-                "{{ item }}"+
-            {% endfor %}
-            ""
-        );
-    </script>
-    {#  Построение прогноза на будущее  #}
-    <div id="forecast_graph" class="graph"></div>
-    <script type="text/javascript">
-        g = new Dygraph(
-        document.getElementById("forecast_graph"),
-
-            {% for item in forecast_values %}
-                "{{ item }}"+
-            {% endfor %}
-            ""
-        );
-    </script>
 {% endblock %}

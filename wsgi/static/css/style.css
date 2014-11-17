@@ -40,16 +40,24 @@ height: 40px;
 
 
 .content {
-background: #FAFAD2;
-width: 100%;
-height: auto;
+    background: #FAFAD2;
+    height: auto;
+    width: 100%; /* Ширина слоя */
+}
+
+.currency_table {
+    font-size: medium;
 }
 
 .graph {
-background: #FAFAD2;
-width: 85%;
-height: 85%;;
+    background: #FAFAD2;
+    float: left;
+    height: 400px;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
 
 #graphdiv {
 background: #FAFAD2;
@@ -57,10 +65,10 @@ width: 85%;
 height: 500px;
 }
 
-#footer {
-background: #FAFAD2;
-width: 100%;
-height: 50px;
+.footer {
+    background: #FAFAD2;
+    width: 100%;
+    height: 50px;
 }
 
 #currency_table {
