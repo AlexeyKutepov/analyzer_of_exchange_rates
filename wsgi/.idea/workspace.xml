@@ -29,8 +29,28 @@
       <file leaf-file-name="tasks.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <caret line="44" column="65" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="975">
+              <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_forekast_time_series.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7380675" vertical-offset="611" max-vertical-offset="1650">
+              <caret line="83" column="104" selection-start-line="83" selection-start-column="104" selection-end-line="83" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_forecast.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1335">
+              <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -39,7 +59,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chart_forecast/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="915">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="915">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="53" />
               <folding />
             </state>
@@ -49,23 +69,23 @@
       <file leaf-file-name="currency.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/currency/currency.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="90" max-vertical-offset="1035">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state vertical-scroll-proportion="-14.375" vertical-offset="90" max-vertical-offset="1050">
+              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
               <folding>
-                <element signature="e#1807#1851#0#HTML" expanded="true" />
-                <element signature="e#2057#2079#0#HTML" expanded="true" />
-                <element signature="e#2180#2224#0#HTML" expanded="true" />
-                <element signature="e#2430#2452#0#HTML" expanded="true" />
+                <element signature="e#1890#1934#0#HTML" expanded="true" />
+                <element signature="e#2140#2162#0#HTML" expanded="true" />
+                <element signature="e#2263#2307#0#HTML" expanded="true" />
+                <element signature="e#2513#2535#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47423887" vertical-offset="0" max-vertical-offset="3360">
-              <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+            <state vertical-scroll-proportion="-12.777778" vertical-offset="360" max-vertical-offset="3600">
+              <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -76,8 +96,8 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1770">
-              <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1830">
+              <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -86,7 +106,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chart_currency/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="1215">
+            <state vertical-scroll-proportion="-14.962963" vertical-offset="136" max-vertical-offset="1215">
               <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -135,12 +155,13 @@
         <option value="$PROJECT_DIR$/exchange/urls.py" />
         <option value="dbtable:/2560e364/5771d246-778e-477a-bbd6-0d4866353ddd/..chart_forecast_forecast_of_usd" />
         <option value="$PROJECT_DIR$/chart_forecast/views.py" />
-        <option value="$PROJECT_DIR$/forecast/tasks.py" />
-        <option value="$PROJECT_DIR$/forecast/management/commands/build_forecast.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/currency/views.py" />
         <option value="$PROJECT_DIR$/templates/currency/currency.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/currency/views.py" />
+        <option value="$PROJECT_DIR$/forecast/tasks.py" />
+        <option value="$PROJECT_DIR$/forecast/management/commands/build_forecast.py" />
+        <option value="$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py" />
       </list>
     </option>
   </component>
@@ -274,6 +295,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forecast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forecast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forecast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -718,6 +793,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -892,14 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart_forecast/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09404389" vertical-offset="0" max-vertical-offset="705">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/2560e364/5771d246-778e-477a-bbd6-0d4866353ddd/..chart_forecast_forecast_of_usd">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="150">
@@ -915,24 +983,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="630">
           <caret line="4" column="114" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6447219" vertical-offset="767" max-vertical-offset="1650">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7321226" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-          <folding>
-            <element signature="e#103#168#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,24 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="615">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart_currency/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="1215">
-          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/chart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="495">
@@ -1010,31 +1042,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/chart_currency/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1770">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="44" column="65" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/currency/currency.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="90" max-vertical-offset="1035">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state vertical-scroll-proportion="-14.962963" vertical-offset="136" max-vertical-offset="1215">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
           <folding>
-            <element signature="e#1807#1851#0#HTML" expanded="true" />
-            <element signature="e#2057#2079#0#HTML" expanded="true" />
-            <element signature="e#2180#2224#0#HTML" expanded="true" />
-            <element signature="e#2430#2452#0#HTML" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="615">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778" vertical-offset="360" max-vertical-offset="3600">
+          <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1047,13 +1078,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/currency/currency.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47423887" vertical-offset="0" max-vertical-offset="3360">
-          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+        <state vertical-scroll-proportion="-14.375" vertical-offset="90" max-vertical-offset="1050">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#1890#1934#0#HTML" expanded="true" />
+            <element signature="e#2140#2162#0#HTML" expanded="true" />
+            <element signature="e#2263#2307#0#HTML" expanded="true" />
+            <element signature="e#2513#2535#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1830">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart_forecast/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.069848664" vertical-offset="0" max-vertical-offset="859">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1335">
+          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forecast/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="975">
+          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7380675" vertical-offset="611" max-vertical-offset="1650">
+          <caret line="83" column="104" selection-start-line="83" selection-start-column="104" selection-end-line="83" selection-end-column="104" />
+          <folding />
         </state>
       </provider>
     </entry>

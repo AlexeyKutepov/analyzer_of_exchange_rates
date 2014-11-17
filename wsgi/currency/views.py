@@ -30,8 +30,22 @@ def prepare_currency_value_list(currency, days=100):
         try:
             values.append(
                 str(datetime.date.today()-datetime.timedelta(days=i))+', '+
-                str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i+1)).forecast)+', '+
-                str(CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i+1)).value)+r'\n'
+                str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).forecast)+', '+
+                str(CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).value)+r'\n'
+            )
+        except:
+            pass #ничего не делаем для того, чтобы получить корректный вывод
+    return values
+
+# Формируем прогноз для отображения в виде графика
+def prepare_forecast_value_list(currency, days=30):
+    values = []
+    values.append(r'Дата, '+r'Прогноз '+currency+'/RUB')
+    for i in range(days):
+        try:
+            values.append(
+                str(datetime.date.today()+datetime.timedelta(days=i))+', '+
+                str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()+datetime.timedelta(days=i)).forecast)+r'\n'
             )
         except:
             pass #ничего не делаем для того, чтобы получить корректный вывод
@@ -91,6 +105,7 @@ def response(years):
 #период 1 день
 def period_1d(request):
     currency_values = prepare_currency_value_list("USD")
+    forecast_values = prepare_forecast_value_list("USD")
     [currency_list, current_date] = prepare_currency_list(datetime.date.today()-datetime.timedelta(days=1))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 day, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
@@ -101,6 +116,7 @@ def period_1d(request):
             'current_date':current_date.strftime("%d.%m.%Y"),
             'currency_list':currency_list,
             'currency_values': currency_values,
+            'forecast_values':forecast_values,
         }
     )
 

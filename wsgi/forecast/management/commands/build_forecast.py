@@ -44,6 +44,27 @@ class Command(BaseCommand):
                 date=forecast_date + datetime.timedelta(days=i+1)
             ).save()
 
+        # Прогноз на месяц вперёд
+        for i in range(2, 30):
+            # Настройка предсказателя
+            forecast_class = ForecastTimeSeries(
+                level=[],
+                alpha=0.5,
+                phi=0.5,
+                gamma=0.5,
+                delta=0.5,
+                trend=[0.0,],
+                forecast_error=[0.0,],
+                season=[0.0,],
+                periods=1
+            )
+            result_list = forecast_class.get_forecast(currency_values_list, i)
+            print("forecast list 2 = ", result_list)
+            FORECAST_CLASSES[currency](
+                forecast=result_list[len(result_list)-1],
+                date=datetime.date.today() + datetime.timedelta(days=i)
+            ).save()
+
 
 
     def handle(self, *args, **options):

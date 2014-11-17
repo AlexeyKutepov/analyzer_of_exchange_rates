@@ -81,7 +81,7 @@ class ForecastTimeSeries:
         forecast = self.level[len(self.level)-1] + \
                    self.trend[len(self.trend)-1] * \
                    sum_phi + \
-                   self.season[len(self.season) - 1 - self.periods + steps]
+                   self.season[len(self.season) - 1] # - self.periods + steps] todo пересмотреть формулу
         return forecast
 
     # Метод получения прогноза:
