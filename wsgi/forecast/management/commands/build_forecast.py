@@ -1,19 +1,11 @@
 """
 Обработчик комманд для запуска приложения построения прогнозов
-Команды парсера Предсказателя:
-    parse_cbrf - Запускает парсер сайта ЦБРФ за определённое количество дней (по умолчанию 1)
-Параметры:
-    n - количество дней, за которое нужно получить информацию о курсах валют.
-        Пример: parse_cbrf 100 - получить информацию за 100 дней
-Опции:
-    -el - Запускает автоматический сбор данных ежедневно, за период времени указанный в n или
-          установленный по умолчанию
 """
 
 __author__ = 'Alexey Kutepov'
 
 from django.core.management.base import BaseCommand, CommandError
-from currency.constants import CURRENCY_CLASSES
+from currency.constants import CURRENCY_CLASSES, CURRENCY_DATA
 from chart_forecast.constants import FORECAST_CLASSES
 from forecast.management.commands._forekast_time_series import  *
 import datetime
@@ -45,10 +37,11 @@ class Command(BaseCommand):
         result_list = forecast_class.get_forecast(currency_values_list)
         print("forecast list = ", result_list)
 
-        for i in range(days):
+        forecast_date = datetime.date.today() - datetime.timedelta(days=len(result_list)-1)
+        for i in range(len(result_list)):
             FORECAST_CLASSES[currency](
                 forecast=result_list[i],
-                date=datetime.date.today() - datetime.timedelta(days=days-(i-1))
+                date=forecast_date + datetime.timedelta(days=i+1)
             ).save()
 
 
@@ -64,6 +57,9 @@ class Command(BaseCommand):
         else:
             if currency in CURRENCY_CLASSES:
                 self.ts_handler(currency, days)
+            elif currency == "ALL":
+                for item in CURRENCY_DATA:
+                    self.ts_handler(item["char_code"], days)
             else:
                 raise CommandError("Incorrect arguments")
 
