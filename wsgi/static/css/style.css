@@ -49,13 +49,21 @@ height: 40px;
     font-size: medium;
 }
 
-.graph {
-    background: #FAFAD2;
+.left_container {
     float: left;
-    height: 400px;
     width: 40%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.graph {
+    background: #FAFAD2;
+    height: 400px;
+    width: 100%;
+}
+
+.center_50 {
+    margin-left: 50%;
 }
 
 

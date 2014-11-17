@@ -13,33 +13,36 @@
 {% block content %}
 <h3>Центральный банк Российской Федерации установил с {{current_date}} следующие курсы иностранных валют к рублю Российской Федерации без обязательств Банка России покупать или продавать указанные валюты по данному курсу </h3>
 
-     {#  Построение графика изменения курса валюты и графика прогнозов на прошедший период времени  #}
-    <div id="currency_graph" class="graph"></div>
-    <script type="text/javascript">
-        g = new Dygraph(
-        document.getElementById("currency_graph"),
+    <div id="chart_container" class="left_container">
+        <h3 id="currency_name" class="center_50">{{ currency_name }}</h3>
+        {#  Построение графика изменения курса валюты и графика прогнозов на прошедший период времени  #}
+        <div id="currency_graph" class="graph"></div>
+        <script type="text/javascript">
+            g = new Dygraph(
+            document.getElementById("currency_graph"),
 
-            {% for item in currency_values %}
-                "{{ item }}"+
-            {% endfor %}
-            ""
-        );
-    </script>
-    {#  Построение прогноза на будущее  #}
-{#    <div id="forecast_graph" class="graph"></div>#}
-{#    <script type="text/javascript">#}
-{#        g = new Dygraph(#}
-{#        document.getElementById("forecast_graph"),#}
-{##}
-{#            {% for item in forecast_values %}#}
-{#                "{{ item }}"+#}
-{#            {% endfor %}#}
-{#            ""#}
-{#        );#}
-{#    </script>#}
+                {% for item in currency_values %}
+                    "{{ item }}"+
+                {% endfor %}
+                ""
+            );
+        </script>
+        {#  Построение прогноза на будущее  #}
+        <div id="forecast_graph" class="graph"></div>
+        <script type="text/javascript">
+            g = new Dygraph(
+            document.getElementById("forecast_graph"),
+
+                {% for item in forecast_values %}
+                    "{{ item }}"+
+                {% endfor %}
+                ""
+            );
+        </script>
+    </div>
     <table id="currency_table" border="0" class="currency_table">
 
-        {% for item in currency %}
+        {% for item in currency_list %}
             <tr>
                 {% if item.state %}
                     <td><a href="/{{item.link}}" style="color:#3CB371; text-decoration: none"><b>{{ item.char_code }}</b></a></td>

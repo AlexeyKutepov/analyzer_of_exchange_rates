@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from currency.constants import CURRENCY_DATA, CURRENCY_CLASSES
+from chart_forecast.constants import FORECAST_CLASSES
 from currency.currency import Currency
 import datetime
 import logging
@@ -20,15 +21,16 @@ def get_values_for_handler(currency_class, values, from_date, to_date):
             pass #ничего не делаем для того, чтобы получить корректный вывод
         from_date = from_date + datetime.timedelta(days=1)
 
-# Формируем список значений курсов валют за days дней
+# Формируем список значений курсов валют с текущим прогнозом за days дней
 # для отображения графика
 def prepare_currency_value_list(currency, days=100):
     values = []
-    values.append(r'Дата, '+currency[0:3]+r'/RUB\n')
+    values.append(r'Дата, '+r'Прогноз '+currency+'/RUB, Курс '+currency+r'/RUB\n')
     for i in range(days):
         try:
             values.append(
                 str(datetime.date.today()-datetime.timedelta(days=i))+', '+
+                str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i+1)).forecast)+', '+
                 str(CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i+1)).value)+r'\n'
             )
         except:
@@ -92,68 +94,125 @@ def period_1d(request):
     [currency_list, current_date] = prepare_currency_list(datetime.date.today()-datetime.timedelta(days=1))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 day, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {''
-                                   'title':'Курсы валют',
-                                   'period_state':'period/1d.html',
-                                   "current_date":current_date.strftime("%d.%m.%Y"),
-                                   "currency":currency_list,
-                                   "currency_values": currency_values,
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/1d.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
         }
     )
 
 #период 1 неделя
 def period_1w(request):
+    currency_values = prepare_currency_value_list("USD", 7)
     [currency_list, current_date]  = prepare_currency_list(datetime.date.today()-datetime.timedelta(weeks=1))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 week, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/1w.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/1w.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 1 месяц
 def period_1m(request):
+    currency_values = prepare_currency_value_list("USD", 30)
     [currency_list, current_date]  = prepare_currency_list(datetime.date.today()-datetime.timedelta(days=30))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/1m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/1m.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 3 месяца
 def period_3m(request):
+    currency_values = prepare_currency_value_list("USD", 90)
     [currency_list, current_date]  = prepare_currency_list(datetime.date.today()-datetime.timedelta(days=90))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 3 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/3m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/3m.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 6 месяцев
 def period_6m(request):
+    currency_values = prepare_currency_value_list("USD", 180)
     [currency_list, current_date]  = prepare_currency_list(datetime.date.today()-datetime.timedelta(days=180))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 6 month, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/6m.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/6m.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 1 год
 def period_1y(request):
+    currency_values = prepare_currency_value_list("USD", 365)
     [currency_list, current_date]  = response(years=1)
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 year, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/1y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/1y.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 5 лет
 def period_5y(request):
+    currency_values = prepare_currency_value_list("USD", 1825)
     [currency_list, current_date]  = response(years=5)
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 5 years, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/5y.html', "current_date":current_date.strftime("%d.%m.%Y"),  "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/5y.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
 #период 10 лет
 def period_10y(request):
+    currency_values = prepare_currency_value_list("USD", 3650)
     [currency_list, current_date]  = response(years=10)
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 10 years, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
-        'currency/currency.html', {'title':'Курсы валют', 'period_state':'period/10y.html', "current_date":current_date.strftime("%d.%m.%Y"), "currency":currency_list}
+        'currency/currency.html', {
+            'title':'Курсы валют',
+            'currency_name':'USD/RUB',
+            'period_state':'period/10y.html',
+            'current_date':current_date.strftime("%d.%m.%Y"),
+            'currency_list':currency_list,
+            'currency_values': currency_values,
+        }
     )
 
