@@ -24,10 +24,10 @@ class Command(BaseCommand):
         # Настройка предсказателя
         forecast_class = ForecastTimeSeries(
             level=[],
-            alpha=0.5,
-            phi=0.5,
-            gamma=0.5,
-            delta=0.5,
+            alpha=0.2158180684703735,
+            phi=0.412445723777211,
+            gamma=0.9929404612074413,
+            delta=0.2579637098952675,
             trend=[0.0,],
             forecast_error=[0.0,],
         )
@@ -47,10 +47,10 @@ class Command(BaseCommand):
             # Настройка предсказателя
             forecast_class = ForecastTimeSeries(
                 level=[],
-                alpha=0.5,
-                phi=0.5,
-                gamma=0.5,
-                delta=0.5,
+                alpha=0.4178521901178902,
+                phi=0.5125273401822462,
+                gamma=0.24401484457421907,
+                delta=0.49759027699163727,
                 trend=[0.0,],
                 forecast_error=[0.0,],
             )

@@ -47,7 +47,7 @@ def dec(x, d):
         return x
 
 # Алгоритм спуска с горы
-def hill_climb():
+def hill_climb(days=100, steps=1, currency="USD"):
     #Ограничения
     domain = [
         (0, 1),
@@ -62,7 +62,7 @@ def hill_climb():
         random.random(),
         random.random(),
     ]
-    print("current cost = ", cost(current_state[0], current_state[1], current_state[2], current_state[3]))
+    print("current cost = ", cost(current_state[0], current_state[1], current_state[2], current_state[3], days, steps, currency))
     while True:
         neighbors = []
         for i in range(len(domain)):
@@ -76,10 +76,10 @@ def hill_climb():
             neighbors.append(
                 state
             )
-        current = cost(current_state[0], current_state[1], current_state[2], current_state[3])
+        current = cost(current_state[0], current_state[1], current_state[2], current_state[3], days, steps, currency)
         best = current
         for i in range(len(neighbors)):
-            res = cost(neighbors[i][0], neighbors[i][1], neighbors[i][2], neighbors[i][3])
+            res = cost(neighbors[i][0], neighbors[i][1], neighbors[i][2], neighbors[i][3], days, steps, currency)
             if res < best:
                 best = res
                 current_state = neighbors[i][:]

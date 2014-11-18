@@ -29,7 +29,7 @@
       <file leaf-file-name="tasks.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="915">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="915">
               <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
@@ -39,7 +39,7 @@
       <file leaf-file-name="_forekast_time_series.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.148148" vertical-offset="608" max-vertical-offset="1440">
+            <state vertical-scroll-proportion="-46.666668" vertical-offset="0" max-vertical-offset="1440">
               <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
@@ -49,20 +49,32 @@
       <file leaf-file-name="_optimization.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast/management/commands/_optimization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1395">
-              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+              <caret line="81" column="112" selection-start-line="81" selection-start-column="112" selection-end-line="81" selection-end-column="112" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="do_opt.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="do_opt.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast/management/commands/do_opt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19208382" vertical-offset="0" max-vertical-offset="859">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding>
                 <element signature="e#31#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_forecast.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.74621654" vertical-offset="139" max-vertical-offset="1335">
+              <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+              <folding>
+                <element signature="e#103#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,12 +161,12 @@
         <option value="$PROJECT_DIR$/currency/views.py" />
         <option value="$PROJECT_DIR$/templates/currency/currency.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/forecast/management/commands/build_forecast.py" />
         <option value="$PROJECT_DIR$/forecast/tasks.py" />
         <option value="$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py" />
         <option value="$PROJECT_DIR$/forecast/optimization.py" />
         <option value="$PROJECT_DIR$/forecast/management/commands/_optimization.py" />
         <option value="$PROJECT_DIR$/forecast/management/commands/do_opt.py" />
+        <option value="$PROJECT_DIR$/forecast/management/commands/build_forecast.py" />
       </list>
     </option>
   </component>
@@ -1041,14 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart_forecast/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="915">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/currency/currency.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375" vertical-offset="90" max-vertical-offset="1050">
@@ -1078,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.148148" vertical-offset="608" max-vertical-offset="1440">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.4/random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4886" max-vertical-offset="11055">
@@ -1102,28 +1098,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
+    <entry file="file://$PROJECT_DIR$/chart_forecast/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13504075" vertical-offset="251" max-vertical-offset="1335">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="915">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_optimization.py">
+    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_forekast_time_series.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1395">
-          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        <state vertical-scroll-proportion="-46.666668" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forecast/management/commands/do_opt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19208382" vertical-offset="0" max-vertical-offset="859">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding>
             <element signature="e#31#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forecast/management/commands/_optimization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="81" column="112" selection-start-line="81" selection-start-column="112" selection-end-line="81" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forecast/management/commands/build_forecast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74621654" vertical-offset="139" max-vertical-offset="1335">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+          <folding>
+            <element signature="e#103#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
