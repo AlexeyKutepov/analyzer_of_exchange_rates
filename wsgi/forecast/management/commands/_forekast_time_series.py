@@ -19,7 +19,7 @@ __author__ = 'Alexey Kutepov'
 
 class ForecastTimeSeries:
     def __init__(self, alpha=0.5, phi=0.5, gamma=0.5, delta=0.5,
-                 trend=[0.0,], forecast_error=[0.0,], season=[0.0,], periods=1, level=[],):
+                 trend=[0.0,], forecast_error=[0.0,], level=[],):
         self.alpha = alpha
         self.phi = phi
         self.gamma = gamma
@@ -27,8 +27,6 @@ class ForecastTimeSeries:
         self.trend = trend
         self.level = level
         self.forecast_error = forecast_error
-        self.season = season
-        self.periods = periods
 
     def __str__(self):
         return super().__str__()
@@ -62,16 +60,6 @@ class ForecastTimeSeries:
                 float(self.forecast_error[len(self.forecast_error)-1])
             )
 
-    # Вычисление сглаженного сезонного индекса
-    # season + delta * (1 - alpha) * forecast_error
-    def __calculate_season_index(self):
-        self.season.append(
-            float(
-                self.season[len(self.season) - self.periods] +
-                self.delta*(1-self.alpha) *
-                self.forecast_error[len(self.forecast_error)-1])
-        )
-
     # Вычисление прогноза
     # level + trend * sum_phi + season
     def __calculate_forecast(self, steps=1):
@@ -80,8 +68,7 @@ class ForecastTimeSeries:
             sum_phi+=self.phi**i
         forecast = self.level[len(self.level)-1] + \
                    self.trend[len(self.trend)-1] * \
-                   sum_phi + \
-                   self.season[len(self.season) - 1] # - self.periods + steps] todo пересмотреть формулу
+                   sum_phi
         return forecast
 
     # Метод получения прогноза:
@@ -95,7 +82,6 @@ class ForecastTimeSeries:
             self.__calculate_forecast_error(item, prev_forecast)
             self.__calculate_trend()
             self.__calculate_level()
-            self.__calculate_season_index()
             result_list.append(self.__calculate_forecast(steps))
             prev_forecast = result_list[len(result_list) - 1]
         return result_list

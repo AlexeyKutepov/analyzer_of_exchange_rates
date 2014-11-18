@@ -30,8 +30,6 @@ class Command(BaseCommand):
             delta=0.5,
             trend=[0.0,],
             forecast_error=[0.0,],
-            season=[0.0,],
-            periods=1
         )
 
         result_list = forecast_class.get_forecast(currency_values_list)
@@ -55,8 +53,6 @@ class Command(BaseCommand):
                 delta=0.5,
                 trend=[0.0,],
                 forecast_error=[0.0,],
-                season=[0.0,],
-                periods=1
             )
             result_list = forecast_class.get_forecast(currency_values_list, i)
             print("forecast list 2 = ", result_list)
