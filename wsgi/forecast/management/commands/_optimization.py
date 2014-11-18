@@ -29,7 +29,7 @@ def cost(alpha, phi, gamma, delta, days=100, steps=1, currency="USD"):
     count = days - steps
     result = 0.0
     for i in range(count):
-        result += abs(float(currency_values_list[i]) - result_list[i+steps])
+        result += abs(float(currency_values_list[i+steps]) - result_list[i])
     return result
 
 def inc(x, d):
