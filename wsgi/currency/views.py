@@ -28,9 +28,13 @@ def _prepare_currency_value_list(currency, days=100):
     values.append(r'Дата, '+r'Прогноз '+currency+'/RUB, Курс '+currency+r'/RUB\n')
     for i in range(days):
         try:
+            forecast = str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).forecast)
+        except:
+            forecast = "0"
+        try:
             values.append(
                 str(datetime.date.today()-datetime.timedelta(days=i))+', '+
-                str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).forecast)+', '+
+                forecast+', '+
                 str(CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).value)+r'\n'
             )
         except:
@@ -80,7 +84,7 @@ def _prepare_currency_list(period, current_date=datetime.date.today()):
             change = _get_change(
                 item["class"].objects.get(date=period).value, item["class"].objects.get(date=current_date).value
             )
-            link = "build_chart/?currency="+str(item["char_code"])
+            link = "currency_info/?currency="+str(item["char_code"])
         except ObjectDoesNotExist:
             pass
         else:
@@ -93,15 +97,15 @@ def _prepare_currency_list(period, current_date=datetime.date.today()):
         return currency_list, current_date
 
 #получить курсы валют
-def get_quotation_of_currency(request):
-    currency_values = _prepare_currency_value_list("USD")
-    forecast_values = _prepare_forecast_value_list("USD")
+def get_quotation_of_currency(request, currency="USD"):
+    currency_values = _prepare_currency_value_list(currency)
+    forecast_values = _prepare_forecast_value_list(currency)
     [currency_list, current_date] = _prepare_currency_list(datetime.date.today()-datetime.timedelta(days=1))
     log.info("HTTP_HOST: "+request.META["HTTP_HOST"]+", Period 1 day, Current date: "+current_date.strftime("%d.%m.%Y"))
     return render_to_response(
         'currency/currency.html', {
             'title':'Курсы валют',
-            'currency_name':'USD/RUB',
+            'currency_name':currency+'/RUB',
             'period_state':'period/1d.html',
             'current_date':current_date.strftime("%d.%m.%Y"),
             'currency_list':currency_list,
@@ -110,3 +114,13 @@ def get_quotation_of_currency(request):
         }
     )
 
+#получение подробной информации о валюте
+def get_currency_info(request):
+    if 'currency' in request.GET:
+        currency = request.GET['currency']
+        if currency in CURRENCY_CLASSES:
+            return get_quotation_of_currency(request, currency)
+        else:
+            return get_quotation_of_currency(request, "USD")
+    else:
+        return get_quotation_of_currency(request, "USD")
