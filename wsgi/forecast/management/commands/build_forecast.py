@@ -6,7 +6,7 @@ __author__ = 'Alexey Kutepov'
 
 from django.core.management.base import BaseCommand, CommandError
 from currency.constants import CURRENCY_CLASSES, CURRENCY_DATA
-from chart_forecast.constants import FORECAST_CLASSES
+from forecast.constants import FORECAST_CLASSES
 from forecast.management.commands._forekast_time_series import  *
 import datetime
 
@@ -24,10 +24,10 @@ class Command(BaseCommand):
         # Настройка предсказателя
         forecast_class = ForecastTimeSeries(
             level=[],
-            alpha=0.2158180684703735,
-            phi=0.412445723777211,
-            gamma=0.9929404612074413,
-            delta=0.2579637098952675,
+            alpha=0.7898781540523456,
+            phi=0.0014315547808000616,
+            gamma=0.26521182714746216,
+            delta=0.7879944349159262,
             trend=[0.0,],
             forecast_error=[0.0,],
         )
@@ -47,10 +47,10 @@ class Command(BaseCommand):
             # Настройка предсказателя
             forecast_class = ForecastTimeSeries(
                 level=[],
-                alpha=0.4178521901178902,
-                phi=0.5125273401822462,
-                gamma=0.24401484457421907,
-                delta=0.49759027699163727,
+                alpha=0.576538981791653,
+                phi=0.002559493548395495,
+                gamma=0.729581128925414,
+                delta=0.8280377276707289,
                 trend=[0.0,],
                 forecast_error=[0.0,],
             )

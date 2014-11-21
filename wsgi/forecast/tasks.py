@@ -4,7 +4,7 @@ from celery.task import periodic_task
 from datetime import timedelta
 import datetime
 from currency.constants import CURRENCY_DATA
-from chart_forecast.constants import FORECAST_CLASSES
+from forecast.constants import FORECAST_CLASSES
 from forecast.management.commands._forekast_time_series import ForecastTimeSeries
 
 @periodic_task(run_every = timedelta(seconds = 3600))

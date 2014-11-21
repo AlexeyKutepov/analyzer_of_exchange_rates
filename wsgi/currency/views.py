@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from currency.constants import CURRENCY_DATA, CURRENCY_CLASSES
-from chart_forecast.constants import FORECAST_CLASSES
+from forecast.constants import FORECAST_CLASSES
 from currency.currency import Currency
 import datetime
 import logging

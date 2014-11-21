@@ -7,30 +7,25 @@
     {% block scripts %}{% endblock %}
 </head>
 <body>
-<div id="container">
-    <div id="header">
-        {% load staticfiles %}
-        <img style="float: left;" src="{% static "images/header/logo.png" %}" alt="My image"  width="390" height="75"/>
+<header>
+    <div id="menu" class="menu">
+        <ul id="menu_list">
+            <li><a href="/">Курсы валют</a></li>
+            <li><a href="/">О проекте</a></li>
+        </ul>
     </div>
-    <div id="menu">
-        <center>
-            <ul id="menu_list">
-                <li><a href="/">Курсы валют</a></li>
-                <li><a href="/forecast/">Прогнозы</a></li>
-                <li><a href="/">О сайте</a></li>
-            </ul>
-        </center>
-    </div>
+</header>
+<div id="container" class="container">
     <div id="period">
         {% block period %}{% endblock %}
     </div>
     <div id="content" class="content">
         {% block content %}{% endblock %}
     </div>
-    <div id="footer" class="footer">
+    <footer id="footer" class="footer">
         <hr>
         <h4><p>Copyright © 2013-2014 Алексей Кутепов</p></h4>
-    </div>
+    </footer>
 </div>
 </body>
 </html>

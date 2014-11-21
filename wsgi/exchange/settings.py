@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'currency',
-    'chart_forecast',
     'forecast',
     'cbrf_parser',
     'djcelery',
