@@ -23,7 +23,7 @@ body {
 #menu_list{list-style:none; width:500px; padding:0; margin: 0px;}
 #menu_list li{float:left; font:bold 16px Arial;}
 #menu_list a{color:#FFFFFF; display:block; height:35px; line-height:35px; padding:0px 30px 0px 30px; background:#20B2AA; text-decoration:none;}
-#menu_list a:hover{color:#fff; background:#888;}
+#menu_list a:hover{color:#fff; background:RoyalBlue;}
 
 
 #period {

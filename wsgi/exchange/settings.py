@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'currency',
     'forecast',
-    'cbrf_parser',
     'djcelery',
 )
 

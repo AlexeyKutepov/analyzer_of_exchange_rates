@@ -61,6 +61,27 @@
       <index name="auth_user_user_permissions_83d7f98b" unique="true" columns="permission_id"/>
       <index name="auth_user_user_permissions_6340c63c" unique="true" columns="user_id"/>
     </table>
+    <table name="celery_taskmeta" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="task_id" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="result" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="date_done" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="traceback" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="hidden" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="meta" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="celery_taskmeta_2ff6b945" unique="true" columns="hidden"/>
+    </table>
+    <table name="celery_tasksetmeta" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="taskset_id" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="result" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_done" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="hidden" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <index name="celery_tasksetmeta_2ff6b945" unique="true" columns="hidden"/>
+    </table>
     <table name="chart_forecast_forecast_of_amd" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
@@ -270,6 +291,390 @@
       <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
       <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
+    </table>
+    <table name="currency_amd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_aud" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_azn" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_bgn" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_brl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_byr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_cad" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_chf" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_cny" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_czk" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_dkk" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_eur" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_gbp" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_huf" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_inr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_jpy" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_kgs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_krw" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_kzt" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_ltl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_lvl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_mdl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_nok" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_pln" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_ron" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_sek" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_sgd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_amd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_aud" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_azn" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_bgn" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_brl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_byr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_cad" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_chf" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_cny" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_czk" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_dkk" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_eur" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_gbp" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_huf" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_inr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_jpy" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_kgs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_krw" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_kzt" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_ltl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_lvl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_mdl" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_nok" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_pln" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_ron" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_sek" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_sgd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_tjs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_tmt" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_try" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_uah" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_usd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_uzs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_xdr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_status_zar" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_tjs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_tmt" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
     </table>
     <table name="currency_to_rub_amd" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
@@ -516,6 +921,42 @@
       <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
+    <table name="currency_try" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_uah" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_usd" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_uzs" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_xdr" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="currency_zar" schema="" catalog="" type="TABLE">
+      <column name="units" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
     <table name="django_admin_log" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="action_time" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
@@ -542,6 +983,276 @@
       <column name="expire_date" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="session_key"/>
       <index name="django_session_b7b81f0c" unique="true" columns="expire_date"/>
+    </table>
+    <table name="djcelery_crontabschedule" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="minute" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="hour" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="day_of_week" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="day_of_month" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="month_of_year" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_djcelery_periodictask_1" table="djcelery_periodictask" schema="" catalog="" columns="crontab_id"/>
+    </table>
+    <table name="djcelery_intervalschedule" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="every" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="period" sqlType="VARCHAR(24)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_djcelery_periodictask_2" table="djcelery_periodictask" schema="" catalog="" columns="interval_id"/>
+    </table>
+    <table name="djcelery_periodictask" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="task" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="interval_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="crontab_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="args" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="kwargs" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="queue" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="exchange" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="routing_key" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="expires" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="enabled" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="last_run_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="total_run_count" sqlType="INTEGER UNSIGNED" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_changed" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_djcelery_periodictask_1" columns="crontab_id" ref-table="djcelery_crontabschedule" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_djcelery_periodictask_2" columns="interval_id" ref-table="djcelery_intervalschedule" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="djcelery_periodictask_7280124f" unique="true" columns="crontab_id"/>
+      <index name="djcelery_periodictask_8905f60d" unique="true" columns="interval_id"/>
+    </table>
+    <table name="djcelery_periodictasks" schema="" catalog="" type="TABLE">
+      <column name="ident" sqlType="SMALLINT" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="last_update" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="ident"/>
+    </table>
+    <table name="djcelery_taskstate" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="state" sqlType="VARCHAR(64)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="task_id" sqlType="VARCHAR(36)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="tstamp" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="args" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="kwargs" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="eta" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="expires" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="result" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="traceback" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="runtime" sqlType="REAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="retries" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="worker_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="hidden" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_djcelery_taskstate_1" columns="worker_id" ref-table="djcelery_workerstate" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="djcelery_taskstate_2ff6b945" unique="true" columns="hidden"/>
+      <index name="djcelery_taskstate_cac6a03d" unique="true" columns="worker_id"/>
+      <index name="djcelery_taskstate_abaacd02" unique="true" columns="tstamp"/>
+      <index name="djcelery_taskstate_4da47e07" unique="true" columns="name"/>
+      <index name="djcelery_taskstate_5654bf12" unique="true" columns="state"/>
+    </table>
+    <table name="djcelery_workerstate" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="hostname" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="last_heartbeat" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_djcelery_taskstate_1" table="djcelery_taskstate" schema="" catalog="" columns="worker_id"/>
+      <index name="djcelery_workerstate_11e400ef" unique="true" columns="last_heartbeat"/>
+    </table>
+    <table name="djkombu_message" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="visible" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="sent_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="payload" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="queue_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_djkombu_message_1" columns="queue_id" ref-table="djkombu_queue" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="djkombu_message_c80a9385" unique="true" columns="queue_id"/>
+      <index name="djkombu_message_bc4c5ddc" unique="true" columns="sent_at"/>
+      <index name="djkombu_message_5907bb86" unique="true" columns="visible"/>
+    </table>
+    <table name="djkombu_queue" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_djkombu_message_1" table="djkombu_message" schema="" catalog="" columns="queue_id"/>
+    </table>
+    <table name="forecast_amd" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_aud" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_azn" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_bgn" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_brl" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_byr" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_cad" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_chf" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_cny" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_czk" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_dkk" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_eur" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_gbp" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_huf" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_inr" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_jpy" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_kgs" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_krw" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_kzt" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_ltl" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_lvl" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_mdl" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_nok" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_pln" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_ron" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_sek" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_sgd" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_tjs" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_tmt" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_try" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_uah" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_usd" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_uzs" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_xdr" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
+    </table>
+    <table name="forecast_zar" schema="" catalog="" type="TABLE">
+      <column name="forecast" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="date"/>
     </table>
   </data-source>
   <data-source source="LOCAL" name="Django default" uuid="7c68995f-cbf9-4778-9e21-d78dbc19da38">
