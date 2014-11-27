@@ -25,16 +25,17 @@ def _get_values_for_handler(currency_class, values, from_date, to_date):
 # для отображения графика
 def _prepare_currency_value_list(currency, days=100):
     values = []
-    values.append(r'Дата, '+r'Прогноз '+currency+'/RUB, Курс '+currency+r'/RUB\n')
+    # values.append(r'Дата, '+r'Прогноз '+currency+'/RUB, Курс '+currency+r'/RUB\n')
+    values.append(r'Дата, '+r'Курс '+currency+r'/RUB\n')
     for i in range(days):
-        try:
-            forecast = str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).forecast)
-        except:
-            forecast = "0"
+        # try:
+        #     forecast = str(FORECAST_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).forecast)
+        # except:
+        #     forecast = "0"
         try:
             values.append(
                 str(datetime.date.today()-datetime.timedelta(days=i))+', '+
-                forecast+', '+
+                # forecast+', '+
                 str(CURRENCY_CLASSES[currency].objects.get(date=datetime.date.today()-datetime.timedelta(days=i)).value)+r'\n'
             )
         except:

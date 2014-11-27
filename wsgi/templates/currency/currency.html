@@ -22,22 +22,29 @@
                 ""
             );
         </script>
-         <h3 id="currency_name" class="center_45">Прогноз {{ currency_name }}</h3>
+{#         <h3 id="currency_name" class="center_45">Прогноз {{ currency_name }}</h3>#}
         {#  Построение прогноза на будущее  #}
-        <div id="forecast_graph" class="graph"></div>
-        <script type="text/javascript">
-            g = new Dygraph(
-            document.getElementById("forecast_graph"),
-
-                {% for item in forecast_values %}
-                    "{{ item }}"+
-                {% endfor %}
-                ""
-            );
-        </script>
+{#        <div id="forecast_graph" class="graph"></div>#}
+{#        <script type="text/javascript">#}
+{#            g = new Dygraph(#}
+{#            document.getElementById("forecast_graph"),#}
+{##}
+{#                {% for item in forecast_values %}#}
+{#                    "{{ item }}"+#}
+{#                {% endfor %}#}
+{#                ""#}
+{#            );#}
+{#        </script>#}
     </div>
     <table id="currency_table" border="0" class="currency_table">
-
+        <tr>
+            <td><h4>Код</h4></td>
+            <td><h4>Валюта</h4></td>
+            <td><h4>Курс</h4></td>
+            <td><h4>Единиц</h4></td>
+            <td><h4>Разница</h4></td>
+            <td><h4>График</h4></td>
+        </tr>
         {% for item in currency_list %}
             <tr>
                 {% if item.state %}
