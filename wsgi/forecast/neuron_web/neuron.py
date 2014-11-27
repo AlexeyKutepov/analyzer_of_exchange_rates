@@ -17,11 +17,11 @@ class Neuron:
 
     # Функция состояния нейрона
     def _f(self, state):
-        return 1 / math.exp(- self.a * state)
+        return 1 / (1 + math.exp(- self.a * state))
 
     # Активирует нейрон и возвращает результирующее значение
     def action(self, x, weights):
-        if not x is list or not weights is list:
+        if not isinstance(x, list) or not isinstance(weights, list):
             raise AttributeError("ERROR: x or weights is not list")
         if len(x) != len(weights):
             raise ValueError("ERROR: len(x) != len(weights)")

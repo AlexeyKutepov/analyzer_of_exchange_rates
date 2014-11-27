@@ -10,7 +10,7 @@ class Layer:
 
     # Метод добавления нейрона в слой
     def put(self, neuron):
-        if not neuron is Neuron:
+        if not isinstance(neuron, Neuron):
             raise AttributeError("ERROR: argument 'neuron' is not Neuron")
         self.layer.append(neuron)
 
@@ -21,8 +21,10 @@ class Layer:
     # Активирует слой нейронов и возвращает список знечений
     def action(self, x, weights):
         result = []
+        count = 0
         for item in self.layer:
             result.append(
-                item.action(x, weights)
+                item.action(x, weights[count])
             )
+            count += 1
         return result
