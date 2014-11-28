@@ -23,7 +23,7 @@ class NeuronWeb():
             item.set_result(y)
         return y
 
-# Элемент нейронной сети содержащий одн слой и матрицу весов
+# Элемент нейронной сети содержащий один слой и матрицу весов
 class NeuronWebItem:
     def __init__(self, layer, weights):
         super().__init__()
@@ -45,3 +45,5 @@ class NeuronWebItem:
 
     def get_result(self):
         return self._result
+
+

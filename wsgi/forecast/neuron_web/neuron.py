@@ -7,6 +7,7 @@ class Neuron:
     def __init__(self, a=0.5):
         super().__init__()
         self.a = a
+        self.result = None
 
     # Вычисляет текущее состояние нейрона
     def _state(self, x, weights):
@@ -21,9 +22,11 @@ class Neuron:
 
     # Активирует нейрон и возвращает результирующее значение
     def action(self, x, weights):
+        self.input_signal = x;
         if not isinstance(x, list) or not isinstance(weights, list):
             raise AttributeError("ERROR: x or weights is not list")
         if len(x) != len(weights):
             raise ValueError("ERROR: len(x) != len(weights)")
         state = self._state(x, weights)
-        return self._f(state)
+        self.result = self._f(state)
+        return self.result
