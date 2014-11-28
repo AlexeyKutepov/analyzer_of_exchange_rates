@@ -1,40 +1,40 @@
 from django.contrib import admin
-from currency.models import USD, EUR, AUD, AZN, AMD, BYR, BGN, BRL, HUF, KRW, DKK, INR, KZT, CAD, KGS, CNY, LVL, JPY
-from currency.models import LTL, MDL, RON, TMT, NOK, PLN, XDR, SGD, TJS, TRY, UZS, UAH, GBP, CZK, SEK, CHF, ZAR
+from currency.models import *
+
 
 # Register your models here.
-admin.site.register(USD) #Доллар США
-admin.site.register(EUR) #Евро
-admin.site.register(AUD) #Австралийский доллар
-admin.site.register(AZN) #Азербайджанский манат
-admin.site.register(AMD) #Армянских драмов
-admin.site.register(BYR) #Белорусских рублей
-admin.site.register(BGN) #Болгарский лев
-admin.site.register(BRL) #Бразильский реал
-admin.site.register(HUF) #Венгерских форинтов
-admin.site.register(KRW) #Вон Республики Корея
-admin.site.register(DKK) #Датских крон
-admin.site.register(INR) #Индийских рупий
-admin.site.register(KZT) #Казахских тенге
-admin.site.register(CAD) #Канадский доллар
-admin.site.register(KGS) #Киргизских сомов
-admin.site.register(CNY) #Китайских юаней
-admin.site.register(LVL) #Латвийский лат
-admin.site.register(LTL) #Литовский лит
-admin.site.register(MDL) #Молдавских леев
-admin.site.register(RON) #Новых румынских леев
-admin.site.register(TMT) #Новый туркменский манат
-admin.site.register(NOK) #Норвежских крон
-admin.site.register(PLN) #Польских злотых
-admin.site.register(XDR) #СДР (специальные права заимствования)
-admin.site.register(SGD) #Сингапурский доллар
-admin.site.register(TJS) #Таджикских сомони
-admin.site.register(TRY) #Турецкая лира
-admin.site.register(UZS) #Узбекских сумов
-admin.site.register(UAH) #Украинских гривен
-admin.site.register(GBP) #Фунт стерлингов Соединенного королевства
-admin.site.register(CZK) #Чешских крон
-admin.site.register(SEK) #Шведских крон
-admin.site.register(CHF) #Швейцарский франк
-admin.site.register(ZAR) #Южноафриканских рэндов
-admin.site.register(JPY) #Японских иен
+admin.site.register(USD_RUB) #Доллар США
+admin.site.register(EUR_RUB) #Евро
+admin.site.register(AUD_RUB) #Австралийский доллар
+admin.site.register(AZN_RUB) #Азербайджанский манат
+admin.site.register(AMD_RUB) #Армянских драмов
+admin.site.register(BYR_RUB) #Белорусских рублей
+admin.site.register(BGN_RUB) #Болгарский лев
+admin.site.register(BRL_RUB) #Бразильский реал
+admin.site.register(HUF_RUB) #Венгерских форинтов
+admin.site.register(KRW_RUB) #Вон Республики Корея
+admin.site.register(DKK_RUB) #Датских крон
+admin.site.register(INR_RUB) #Индийских рупий
+admin.site.register(KZT_RUB) #Казахских тенге
+admin.site.register(CAD_RUB) #Канадский доллар
+admin.site.register(KGS_RUB) #Киргизских сомов
+admin.site.register(CNY_RUB) #Китайских юаней
+admin.site.register(LVL_RUB) #Латвийский лат
+admin.site.register(LTL_RUB) #Литовский лит
+admin.site.register(MDL_RUB) #Молдавских леев
+admin.site.register(RON_RUB) #Новых румынских леев
+admin.site.register(TMT_RUB) #Новый туркменский манат
+admin.site.register(NOK_RUB) #Норвежских крон
+admin.site.register(PLN_RUB) #Польских злотых
+admin.site.register(XDR_RUB) #СДР (специальные права заимствования)
+admin.site.register(SGD_RUB) #Сингапурский доллар
+admin.site.register(TJS_RUB) #Таджикских сомони
+admin.site.register(TRY_RUB) #Турецкая лира
+admin.site.register(UZS_RUB) #Узбекских сумов
+admin.site.register(UAH_RUB) #Украинских гривен
+admin.site.register(GBP_RUB) #Фунт стерлингов Соединенного королевства
+admin.site.register(CZK_RUB) #Чешских крон
+admin.site.register(SEK_RUB) #Шведских крон
+admin.site.register(CHF_RUB) #Швейцарский франк
+admin.site.register(ZAR_RUB) #Южноафриканских рэндов
+admin.site.register(JPY_RUB) #Японских иен

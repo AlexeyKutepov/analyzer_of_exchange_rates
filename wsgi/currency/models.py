@@ -3,7 +3,7 @@ from django.db import models
 # Курсы валют к рублю:
 
 #Доллар
-class USD(models.Model):
+class USD_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -15,7 +15,7 @@ class USD(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Евро
-class EUR(models.Model):
+class EUR_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -27,7 +27,7 @@ class EUR(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Австралийский доллар
-class AUD(models.Model):
+class AUD_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -39,7 +39,7 @@ class AUD(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Азербайджанский манат
-class AZN(models.Model):
+class AZN_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -51,7 +51,7 @@ class AZN(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Армянских драмов
-class AMD(models.Model):
+class AMD_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -63,7 +63,7 @@ class AMD(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Белорусских рублей
-class BYR(models.Model):
+class BYR_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -75,7 +75,7 @@ class BYR(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Болгарский лев
-class BGN(models.Model):
+class BGN_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -87,7 +87,7 @@ class BGN(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Бразильский реал
-class BRL(models.Model):
+class BRL_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -99,7 +99,7 @@ class BRL(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Венгерских форинтов
-class HUF(models.Model):
+class HUF_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -111,7 +111,7 @@ class HUF(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Вон Республики Корея
-class KRW(models.Model):
+class KRW_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -123,7 +123,7 @@ class KRW(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Датских крон
-class DKK(models.Model):
+class DKK_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -135,7 +135,7 @@ class DKK(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Индийских рупий
-class INR(models.Model):
+class INR_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -147,7 +147,7 @@ class INR(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Казахских тенге
-class KZT(models.Model):
+class KZT_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -159,7 +159,7 @@ class KZT(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Канадский доллар
-class CAD(models.Model):
+class CAD_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -171,7 +171,7 @@ class CAD(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Киргизских сомов
-class KGS(models.Model):
+class KGS_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -183,7 +183,7 @@ class KGS(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Китайских юаней
-class CNY(models.Model):
+class CNY_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -195,7 +195,7 @@ class CNY(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Латвийский лат
-class LVL(models.Model):
+class LVL_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -207,7 +207,7 @@ class LVL(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Литовский лит
-class LTL(models.Model):
+class LTL_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -219,7 +219,7 @@ class LTL(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Молдавских леев
-class MDL(models.Model):
+class MDL_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -231,7 +231,7 @@ class MDL(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Новых румынских леев
-class RON(models.Model):
+class RON_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -243,7 +243,7 @@ class RON(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Новый туркменский манат
-class TMT(models.Model):
+class TMT_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -255,7 +255,7 @@ class TMT(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Норвежских крон
-class NOK(models.Model):
+class NOK_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -267,7 +267,7 @@ class NOK(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Польских злотых
-class PLN(models.Model):
+class PLN_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -279,7 +279,7 @@ class PLN(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #СДР (специальные права заимствования)
-class XDR(models.Model):
+class XDR_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -291,7 +291,7 @@ class XDR(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Сингапурский доллар
-class SGD(models.Model):
+class SGD_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -303,7 +303,7 @@ class SGD(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Таджикских сомони
-class TJS(models.Model):
+class TJS_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -315,7 +315,7 @@ class TJS(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Турецкая лира
-class TRY(models.Model):
+class TRY_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -327,7 +327,7 @@ class TRY(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Узбекских сумов
-class UZS(models.Model):
+class UZS_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -339,7 +339,7 @@ class UZS(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Украинских гривен
-class UAH(models.Model):
+class UAH_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -351,7 +351,7 @@ class UAH(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Фунт стерлингов Соединенного королевства
-class GBP(models.Model):
+class GBP_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -363,7 +363,7 @@ class GBP(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Чешских крон
-class CZK(models.Model):
+class CZK_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -375,7 +375,7 @@ class CZK(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Шведских крон
-class SEK(models.Model):
+class SEK_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -387,7 +387,7 @@ class SEK(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Швейцарский франк
-class CHF(models.Model):
+class CHF_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -399,7 +399,7 @@ class CHF(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Южноафриканских рэндов
-class ZAR(models.Model):
+class ZAR_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
@@ -411,7 +411,7 @@ class ZAR(models.Model):
         return str(self.units)+" "+str(self.value)+" "+str(self.date)
 
 #Японских иен
-class JPY(models.Model):
+class JPY_RUB(models.Model):
     units = models.IntegerField()
     value = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)

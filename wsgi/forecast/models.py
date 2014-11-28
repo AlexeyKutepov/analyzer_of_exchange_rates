@@ -4,7 +4,7 @@
 
 from django.db import models
 
-class USD(models.Model):
+class USD_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -12,7 +12,7 @@ class USD(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class EUR(models.Model):
+class EUR_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -20,7 +20,7 @@ class EUR(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class AUD(models.Model):
+class AUD_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -28,7 +28,7 @@ class AUD(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class AZN(models.Model):
+class AZN_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -36,7 +36,7 @@ class AZN(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class AMD(models.Model):
+class AMD_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -44,7 +44,7 @@ class AMD(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class BYR(models.Model):
+class BYR_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -52,7 +52,7 @@ class BYR(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class BGN(models.Model):
+class BGN_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -60,7 +60,7 @@ class BGN(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class BRL(models.Model):
+class BRL_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -68,7 +68,7 @@ class BRL(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class HUF(models.Model):
+class HUF_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -76,7 +76,7 @@ class HUF(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class KRW(models.Model):
+class KRW_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -84,7 +84,7 @@ class KRW(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class DKK(models.Model):
+class DKK_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -92,7 +92,7 @@ class DKK(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class INR(models.Model):
+class INR_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -100,7 +100,7 @@ class INR(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class KZT(models.Model):
+class KZT_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -108,7 +108,7 @@ class KZT(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class CAD(models.Model):
+class CAD_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -116,7 +116,7 @@ class CAD(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class KGS(models.Model):
+class KGS_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -124,7 +124,7 @@ class KGS(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class CNY(models.Model):
+class CNY_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -132,7 +132,7 @@ class CNY(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class LVL(models.Model):
+class LVL_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -140,7 +140,7 @@ class LVL(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class LTL(models.Model):
+class LTL_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -148,7 +148,7 @@ class LTL(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class MDL(models.Model):
+class MDL_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -156,7 +156,7 @@ class MDL(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class RON(models.Model):
+class RON_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -164,7 +164,7 @@ class RON(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class TMT(models.Model):
+class TMT_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -172,7 +172,7 @@ class TMT(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class NOK(models.Model):
+class NOK_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -180,7 +180,7 @@ class NOK(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class PLN(models.Model):
+class PLN_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -188,7 +188,7 @@ class PLN(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class XDR(models.Model):
+class XDR_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -196,7 +196,7 @@ class XDR(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class SGD(models.Model):
+class SGD_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -204,7 +204,7 @@ class SGD(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class TJS(models.Model):
+class TJS_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -212,7 +212,7 @@ class TJS(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class TRY(models.Model):
+class TRY_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -220,7 +220,7 @@ class TRY(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class UZS(models.Model):
+class UZS_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -228,7 +228,7 @@ class UZS(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class UAH(models.Model):
+class UAH_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -236,7 +236,7 @@ class UAH(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class GBP(models.Model):
+class GBP_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -244,7 +244,7 @@ class GBP(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class CZK(models.Model):
+class CZK_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -252,7 +252,7 @@ class CZK(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class SEK(models.Model):
+class SEK_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -260,7 +260,7 @@ class SEK(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class CHF(models.Model):
+class CHF_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -268,7 +268,7 @@ class CHF(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class ZAR(models.Model):
+class ZAR_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
@@ -276,7 +276,7 @@ class ZAR(models.Model):
     def __str__(self):
         return str(self.forecast)+" "+str(self.date)
 
-class JPY(models.Model):
+class JPY_RUB(models.Model):
     forecast = models.DecimalField(max_digits=10, decimal_places=5)
     date = models.DateField(primary_key=True)
     def __unicode__(self):
