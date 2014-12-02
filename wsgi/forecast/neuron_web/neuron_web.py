@@ -1,4 +1,33 @@
+import random
+from forecast.neuron_web.layer import Layer
+from forecast.neuron_web.neuron import Neuron
+
 __author__ = 'Alexey Kutepov'
+
+
+# Построение персептрона с заданными параметрами:
+# layers - количество слоёв
+# neurons - список (количество нейронов в каждом слое)
+def build_perceptron(layers, neurons):
+    if len(neurons) != layers:
+        raise AttributeError("ERROR: len(neurons) != layers")
+    neuron_web = NeuronWeb()
+    for k in range(layers):
+        layer = Layer()
+        weights = []
+        if k == 0:
+            n = neurons[k]
+        else:
+            n = neurons[k-1]
+        for j in range(n):
+            weights.append(random.random())
+        for i in range(neurons[k]):
+            layer.put(Neuron(weights))
+        neuron_web.add_item(
+            layer
+        )
+
+    return neuron_web
 
 # Структура нейронной сети
 class NeuronWeb():
@@ -7,8 +36,8 @@ class NeuronWeb():
         self._items = []
 
     def add_item(self, item):
-        if not isinstance(item, NeuronWebItem):
-            raise AttributeError("ERROR: item is not NeuronWebItem")
+        if not isinstance(item, Layer):
+            raise AttributeError("ERROR: item is not Layer")
         self._items.append(item)
 
     def get_items(self):
@@ -18,32 +47,9 @@ class NeuronWeb():
     def action(self, x):
         y = x
         for item in self._items:
-            layer = item.get_layer()
-            y = layer.action(y, item.get_weights())
-            item.set_result(y)
+            y = item.action(y)
         return y
 
-# Элемент нейронной сети содержащий один слой и матрицу весов
-class NeuronWebItem:
-    def __init__(self, layer, weights):
-        super().__init__()
-        self._layer = layer
-        self._weights = weights
-        self._result = []
 
-    def set_weights(self, weights):
-        self._weights = weights
-
-    def set_result(self, y):
-        self._result = y
-
-    def get_layer(self):
-        return self._layer
-
-    def get_weights(self):
-        return self._weights
-
-    def get_result(self):
-        return self._result
 
 

@@ -19,13 +19,11 @@ class Layer:
         return self.layer
 
     # Активирует слой нейронов и возвращает список знечений
-    def action(self, x, weights):
+    def action(self, x):
         result = []
-        count = 0
         for item in self.layer:
             result.append(
-                item.action(x, weights[count])
+                item.action(x)
             )
-            count += 1
         return result
 

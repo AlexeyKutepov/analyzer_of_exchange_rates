@@ -5,35 +5,9 @@
 
 __author__ = 'Alexey Kutepov'
 
-from forecast.neuron_web.layer import Layer
-from forecast.neuron_web.neuron import Neuron
-from forecast.neuron_web.neuron_web import NeuronWebItem, NeuronWeb
-import random
 
-# Построение персептрона с заданными параметрами:
-def build_perceptron(layers, neurons):
-    if len(neurons) != layers:
-        raise AttributeError("ERROR: len(neurons) != layers")
-    neuron_web = NeuronWeb()
-    for k in range(layers):
-        layer = Layer()
-        for i in range(neurons[k]):
-            layer.put(Neuron())
-        weights = []
-        for i in range(neurons[k]):
-            weights_in = []
-            if k == 0:
-                n = neurons[k]
-            else:
-                n = neurons[k-1]
-            for j in range(n):
-                weights_in.append(random.random())
-            weights.append(weights_in)
-        neuron_web.add_item(
-            NeuronWebItem(layer, weights)
-        )
+from forecast.neuron_web.neuron_web import build_perceptron
 
-    return neuron_web
 
 
 # Обучение

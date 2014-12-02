@@ -4,16 +4,19 @@ import math
 
 # Класс описывает нейрон
 class Neuron:
-    def __init__(self, a=0.5):
+    def __init__(self, weigths, a=0.5):
         super().__init__()
         self.a = a
-        self.result = None
+        self.weights = weigths # Входные веса
+        self.y = None # Выходной сигнал
+        self.x = None # Входной сигнал
 
-    # Вычисляет текущее состояние нейрона
-    def _state(self, x, weights):
+
+    # Вычисляет текущее состояние нейрона (взвешенная сумма входных сигналов)
+    def _state(self, x):
         state = 0
         for i in range(len(x)):
-            state += x[i] * weights[i]
+            state += x[i] * self.weights[i]
         return state
 
     # Функция состояния нейрона
@@ -21,12 +24,12 @@ class Neuron:
         return 1 / (1 + math.exp(- self.a * state))
 
     # Активирует нейрон и возвращает результирующее значение
-    def action(self, x, weights):
-        self.input_signal = x;
-        if not isinstance(x, list) or not isinstance(weights, list):
+    def action(self, x):
+        if not isinstance(x, list) or not isinstance(self.weights, list):
             raise AttributeError("ERROR: x or weights is not list")
-        if len(x) != len(weights):
+        if len(x) != len(self.weights):
             raise ValueError("ERROR: len(x) != len(weights)")
-        state = self._state(x, weights)
-        self.result = self._f(state)
-        return self.result
+        self.x = x
+        state = self._state(x)
+        self.y = self._f(state)
+        return self.y
