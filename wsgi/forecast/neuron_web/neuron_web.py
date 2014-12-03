@@ -6,13 +6,10 @@ __author__ = 'Alexey Kutepov'
 
 
 # Построение персептрона с заданными параметрами:
-# layers - количество слоёв
 # neurons - список (количество нейронов в каждом слое)
-def build_perceptron(layers, neurons):
-    if len(neurons) != layers:
-        raise AttributeError("ERROR: len(neurons) != layers")
+def build_perceptron(neurons):
     neuron_web = NeuronWeb()
-    for k in range(layers):
+    for k in range(len(neurons)):
         layer = Layer()
         weights = []
         if k == 0:    # Входные веса для первого слоя
@@ -77,11 +74,11 @@ class NeuronWeb():
 
 
 if __name__ == "__main__":
-    neuron_web = build_perceptron(3, [10, 15, 1])
+    neuron_web = build_perceptron([10, 20, 20, 1])
     result = neuron_web.action([1, 0.2, 0.3, 0.4, 0.5, 0.1, 0.2, 0.3, 0.4, 0])
     print("before learn: ", result)
-    for i in range(10000):
-        backpropagation(neuron_web, [1, 0.2, 0.3, 0.4, 0.5, 0.1, 0.2, 0.3, 0.4, 0], [0.5,])
+    for i in range(100):
+        backpropagation(neuron_web, [1, 0.2, 0.3, 0.4, 0.5, 0.1, 0.2, 0.3, 0.4, 0], [0.5,], 0.8)
         result = neuron_web.action([1, 0.2, 0.3, 0.4, 0.5, 0.1, 0.2, 0.3, 0.4, 0])
         print("after learn: ", result)
 
